@@ -1,0 +1,15 @@
+.idea
+*.swp
+*.iml
+npm-debug.log
+dump.rdb
+node_modules
+results.tap
+results.xml
+npm-shrinkwrap.json
+.DS_Store
+*/.DS_Store
+*/*/.DS_Store
+._*
+*/._*
+*/*/._*

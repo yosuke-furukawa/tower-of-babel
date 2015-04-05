@@ -1,0 +1,13 @@
+[
+    "BABEL_SETUP",
+    "CLASS",
+    "CLASS_EXTEND",
+    "MODULES_WITH_NAME",
+    "MODULES_DEFAULT_EXPORT",
+    "BLOCK_SCOPE",
+    "ITERATOR_FOR_OF",
+    "GENERATOR",
+    "DESTRUCTURE",
+    "ARROW_FUNCTION",
+    "rest_and_spread"
+]

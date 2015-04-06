@@ -9,9 +9,9 @@ var exercise = require('workshopper-exercise')();
 var filecheck = require('workshopper-exercise/filecheck');
 var execute = require('workshopper-exercise/execute');
 var comparestdout = require('workshopper-exercise/comparestdout');
-var babelModuleProcessor = require('../babel-module-processor');
+var babelProcessor = require('../babel-processor');
 
-module.exports = comparestdout(execute(babelModuleProcessor(filecheck(exercise))));
+module.exports = comparestdout(execute(babelProcessor(filecheck(exercise))));
 var tmpDir = path.resolve(os.tmpDir(), "_babel_" + process.pid);
 
 module.exports.addSetup(function(mode, cb) {

@@ -23,6 +23,12 @@ function processor(mode, callback) {
             writeTranspiled(exercise.submission),
             writeTranspiled(exercise.solution)
         ]);
+    }).catch(function(err) {
+        // ignore error if dir is exists
+        return q.all([
+            writeTranspiled(exercise.submission),
+            writeTranspiled(exercise.solution)
+        ]);
     })
     .spread(function (newSubmission, newSolution) {
         exercise.submission = newSubmission;
@@ -55,7 +61,8 @@ function writeFile(filename, contents) {
 var transpile = q.fbind(function (contents, filename) {
     var transpiled = babel.transform(contents, {
         filename: filename,
-        modules: "common"
+        modules: "common",
+        optional: ["runtime"]
     });
 
     return transpiled;

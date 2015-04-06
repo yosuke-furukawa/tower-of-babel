@@ -9,6 +9,7 @@
   "bin": "./tower-of-babel.js",
   "dependencies": {
     "babel-core": "^5.0.8",
+    "babel-runtime": "^5.0.9",
     "q": "^1.2.0",
     "rimraf": "^2.3.2",
     "workshopper": "^2.3.1",

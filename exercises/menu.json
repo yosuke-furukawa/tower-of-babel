@@ -5,9 +5,10 @@
     "MODULES_WITH_NAME",
     "MODULES_DEFAULT_EXPORT",
     "BLOCK_SCOPE",
+    "COMPUTED_PROPERTY",
     "ITERATOR_FOR_OF",
     "GENERATOR",
     "DESTRUCTURE",
     "ARROW_FUNCTION",
-    "rest_and_spread"
+    "REST_AND_SPREAD"
 ]

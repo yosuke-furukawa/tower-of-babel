@@ -1,4 +1,6 @@
-これまでJavaScriptでは言語レベルでモジュールの分割ができませんでした。Node.js/io.jsにはcommonjsが組み込みで使えていますが、ブラウザでは、JavaScriptをモジュール化してフロントで読み込む際には require.js 使ったり、 browserify 使ったりというライブラリで解決するか、 global空間に独自の名前空間を作ってそこに生やすといった処理がされてきました。
+これまでJavaScriptでは言語レベルでモジュールの分割ができませんでした。
+
+Node.js/io.jsには `commonjs` が組み込みで使えますが、ブラウザでは、JavaScriptをモジュール化してフロントで読み込む際には require.js 使ったり、 browserify 使ったりというライブラリで解決するか、 global空間に独自の名前空間を作ってそこに生やすといった処理がされてきました。
 
 ES6 からはこのモジュール化をするための専用の構文 export と import が使えるようになりました。
 
@@ -62,6 +64,8 @@ console.log(square(+arg2));
 また検証する時と実行するときには、moduleの参照元と実行ファイルの２つを下記の順序で渡してください。
 
 ```
+$ tower-of-babel run|verify <実行ファイル> <moduleの参照元ファイル>
+
 # 試しに実行する時の例
 $ tower-of-babel run Main.js Math.js
 

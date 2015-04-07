@@ -23,6 +23,24 @@ class Monster extends Character {
 }
 ```
 
+基本的に、 `extends` キーワードで継承します。継承されたクラスは親クラスの機能を引き継ぎます。
+親クラスの持つメソッドやメンバーを子クラスから呼び出す場合、 `super` というキーワードを利用します。
+
+```javascript
+// CharacterをMonsterクラスに継承
+class Monster extends Character {
+  constructor(x, y, name) {
+    super(x, y);
+    this.name = name;
+  }
+  attack(character) {
+    // super で親クラスのattackをそのまま呼ぶ
+    super.attack(character);
+    character.health_ -= 5;
+  }
+}
+```
+
 # 問題
 
 下記のprototypeとutil.inheritで書かれたクラスを ES6 の class 構文を使って書き換えてみましょう。

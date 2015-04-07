@@ -19,16 +19,21 @@ function processor(mode, callback) {
     var exercise = this;
 
     q.nfcall(fs.mkdir, tmpDir).then(function () {
-        return q.all([
-            writeTranspiled(exercise.submission),
-            writeTranspiled(exercise.solution)
-        ]);
-    }).catch(function(err) {
-        // ignore error if dir is exists
-        return q.all([
-            writeTranspiled(exercise.submission),
-            writeTranspiled(exercise.solution)
-        ]);
+      return q.nfcall(
+        fs.symlink, 
+        path.resolve(__dirname + '/../node_modules'), 
+        tmpDir + '/node_modules');
+    })
+    .then(function(){
+      if (exercise.submissionImportFile) {
+        return writeTranspiled(exercise.submissionImportFile);
+      }
+    })
+    .then(function() {
+      return q.all([
+        writeTranspiled(exercise.submission),
+        writeTranspiled(exercise.solution)
+      ]);
     })
     .spread(function (newSubmission, newSolution) {
         exercise.submission = newSubmission;
@@ -42,12 +47,12 @@ function cleanup(mode, passed, callback) {
 }
 
 function writeTranspiled(filename) {
-    return readFile(filename).then(function (contents) {
-        var newFilename = path.resolve(tmpDir, Math.random() + ".js");
-        return transpile(contents, filename).then(function (transpiled) {
-            return writeFile(newFilename, transpiled.code).thenResolve(newFilename);
-        });
+  return readFile(filename).then(function (contents) {
+    var newFilename = path.resolve(tmpDir, path.basename(filename));
+    return transpile(contents, filename).then(function (transpiled) {
+      return writeFile(newFilename, transpiled.code).thenResolve(newFilename);
     });
+  });
 }
 
 function readFile(filename) {

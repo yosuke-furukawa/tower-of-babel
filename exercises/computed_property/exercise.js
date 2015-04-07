@@ -9,11 +9,6 @@ var babelProcessor = require('../babel-processor');
 module.exports = comparestdout(execute(babelProcessor(filecheck(exercise))));
 
 module.exports.addSetup(function(mode, cb) {
-  if (process.argv.length !== 5) {
-    console.error("USAGE: tower-of-babel run|verify <executeFile> <importFile>");
-    throw new Error("invalid arguments");
-  }
-  this.submissionImportFile = process.argv[4];
   var x = Math.floor(Math.random() * 100); 
   var y = Math.floor(Math.random() * 100); 
   this.submissionArgs = this.solutionArgs = [x, y];

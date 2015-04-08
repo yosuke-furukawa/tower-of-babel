@@ -7,6 +7,14 @@
   },
   "license": "MIT",
   "bin": "./tower-of-babel.js",
+  "preferGlobal": true,
+  "keywords": [
+    "es6",
+    "babel",
+    "learn",
+    "tutorial",
+    "workshopper"
+  ],
   "dependencies": {
     "babel-core": "^5.0.8",
     "babel-runtime": "^5.0.9",

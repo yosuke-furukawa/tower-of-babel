@@ -1,35 +1,26 @@
-名前付きのexportは明示的にexportするものを選択できるものの、毎回 export って書かなきゃいけないのは面倒な時もあります。
-
-```javascript
-export const greeting = 'Hello';
-export const name = 'Babel';
-export const version = 'v5.0';
-```
-
-このような場合基本的に一つのファイルに対して、一つのオブジェクトだけを export して、書くことが多いです。
+前回、 module について説明しましたが、 export には2種類あります。通常の export と default export です。
+この違いについて説明しましょう。下記の JavaScript は前回の名前付き export を使っています。
 
 ```javascript
 // Message.js
 const greeting = 'Hello';
 const name = 'Babel';
 const version = 'v5.0';
-export const object = {
+export const obj = {
   greeting: greeting,
   name: name,
   version: version
 };
 ```
 
-また、importする側は、exportされている対象の名前を知る必要があります。
+また、importする側は、exportされている対象の名前を指定して下記のようになります。
 
 ```javascript
-import {object} from './Message';
-console.log(
-  object.greeting + ' ' + object.name + ' ' + object.version); //Hello Babel v5.0
+import {obj} from './Message';
+console.log(obj.greeting + ' ' + obj.name + ' ' + obj.version); // Hello Babel v5.0
 ```
 
-
-default 構文を使うと、これを解決できます。
+default export はこれとは異なり、exportする際に `export default` 構文を付けて公開します。下記のように記述できます。
 
 ```javascript
 // Message.js
@@ -51,6 +42,8 @@ console.log(
   Message.greeting + ' ' + Message.name + ' ' + Message.version); //Hello Babel v5.0
 ```
 
+先ほどとの違いが分かるでしょうか。 default export で export した場合は、 import する時にimportの対象をブレース `{...}` で囲む必要はなく、exportされている対象の名前を知る必要はありません。
+
 これは、ちょうど commonjs で `module.exports` を使って以下のように書くのと似ています。
 
 ```javascript
@@ -64,7 +57,7 @@ module.exports = {
 };
 ```
 
-node.jsでmoduleを切り分けるのと同様にES6でもこの`export default`を扱うと簡単にモジュールを切り分けることが可能です。
+Node.jsでmodule.exportsを使って module を切り分けるのと同様にES6でもこの `export default` を扱うと簡単にモジュールを切り分けることが可能です。
 
 # 問題
 
@@ -72,15 +65,15 @@ node.jsでmoduleを切り分けるのと同様にES6でもこの`export default`
 
 ```javascript
 // Math.js
-exports.PI = 3.141592;
+export const PI = 3.141592;
 
 var _sqrt = function(s, x, last){
   return x != last ? _sqrt(s, (x + s / x) / 2.0, x) : x;
 };
-exports.sqrt = function(s){
+export const sqrt = function(s){
   return _sqrt(s, s/2.0, 0.0);
 };
-exports.square(x) {
+export const square(x) {
   return x * x;
 };
 ```
@@ -99,6 +92,8 @@ console.log(square(+arg2));
 また検証する時と実行するときには、moduleの参照元と実行ファイルの２つを下記の順序で渡してください。
 
 ```
+$ tower-of-babel run|verify <実行ファイル> <moduleの参照元ファイル>
+
 # 試しに実行する時の例
 $ tower-of-babel run Main.js Math.js
 

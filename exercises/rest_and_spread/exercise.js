@@ -14,6 +14,7 @@ module.exports.addSetup(function(mode, cb) {
     args += Math.floor(Math.random() * 100) + ","; 
   }
   args = args.substring(0, args.length - 1);
+  this.requiredString = ['...'];
   this.submissionArgs = this.solutionArgs = [args];
   process.nextTick(cb);
 });

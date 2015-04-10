@@ -20,6 +20,7 @@ module.exports.addSetup(function(mode, cb) {
     names[i] = names[j];
     names[j] = t;
   }
+  this.requiredString = ['=>'];
   this.submissionArgs = this.solutionArgs = names;
   process.nextTick(cb);
 });

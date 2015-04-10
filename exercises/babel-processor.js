@@ -26,13 +26,13 @@ function processor(mode, callback) {
     })
     .then(function(){
       if (exercise.submissionImportFile) {
-        return writeTranspiled(exercise.submissionImportFile);
+        return writeTranspiled(exercise.submissionImportFile, exercise.requireImportString);
       }
     })
     .then(function() {
       return q.all([
-        writeTranspiled(exercise.submission),
-        writeTranspiled(exercise.solution)
+        writeTranspiled(exercise.submission, exercise.requiredString),
+        writeTranspiled(exercise.solution, exercise.requiredString)
       ]);
     })
     .spread(function (newSubmission, newSolution) {
@@ -46,13 +46,27 @@ function cleanup(mode, passed, callback) {
     rimraf(tmpDir, callback);
 }
 
-function writeTranspiled(filename) {
+function writeTranspiled(filename, requiredString) {
   return readFile(filename).then(function (contents) {
+    checkES6(contents, requiredString);
     var newFilename = path.resolve(tmpDir, path.basename(filename));
     return transpile(contents, filename).then(function (transpiled) {
       return writeFile(newFilename, transpiled.code).thenResolve(newFilename);
     });
   });
+}
+
+function checkES6(contents, requiredString) {
+  if (typeof requiredString === 'string') {
+    requiredString = [requiredString];
+  }
+  if (Array.isArray(requiredString)) {
+    requiredString.forEach(function(r){
+      if (contents.indexOf(r) < 0) {
+        throw new Error('Wrong, your script does not use ES6 feature.');
+      }
+    });
+  }
 }
 
 function readFile(filename) {

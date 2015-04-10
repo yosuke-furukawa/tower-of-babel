@@ -13,6 +13,7 @@ module.exports.addSetup(function(mode, cb) {
   var x = Math.floor(Math.random() * 100); 
   var y = Math.floor(Math.random() * 100); 
   var name = names[Math.floor(Math.random() * names.length)];
+  this.requiredString = ['class', 'extends'];
   this.submissionArgs = this.solutionArgs = [x, y, name];
   process.nextTick(cb);
 });

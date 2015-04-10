@@ -11,6 +11,7 @@ module.exports = comparestdout(execute(babelProcessor(filecheck(exercise))));
 module.exports.addSetup(function(mode, cb) {
   var x = Math.floor(Math.random() * 100); 
   var y = Math.floor(Math.random() * 100); 
+  this.requiredString = ['class'];
   this.submissionArgs = this.solutionArgs = [x, y];
   process.nextTick(cb);
 });

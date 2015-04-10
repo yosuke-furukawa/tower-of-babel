@@ -14,8 +14,10 @@ module.exports.addSetup(function(mode, cb) {
     throw new Error("invalid arguments");
   }
   this.submissionImportFile = process.argv[4];
+  this.requireImportString = ['export', 'default'];
   var x = Math.floor(Math.random() * 100); 
   var y = Math.floor(Math.random() * 100); 
   this.submissionArgs = this.solutionArgs = [x, y];
+  this.requiredString = ['import'];
   process.nextTick(cb);
 });

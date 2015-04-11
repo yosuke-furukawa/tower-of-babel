@@ -12,8 +12,8 @@ let FizzBuzz = {
         } else if (value % 5 === 0) {
           value = 'Buzz';
         }
-        num++;
         if (num <= max)  return { done: false, value: value };
+        num++;
         return { done: true };
       }
     }

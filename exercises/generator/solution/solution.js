@@ -1,7 +1,7 @@
 const max = process.argv[2];
 let FizzBuzz = function* (){
   let num = 1;
-  while (num < max) {
+  while (num <= max) {
     let value = num;
     num++;
     if (value % 15 === 0) {

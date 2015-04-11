@@ -30,14 +30,25 @@ function processor(mode, callback) {
       }
     })
     .then(function() {
+      return q.nfcall(exercise.getSolutionFiles.bind(exercise));
+    })
+    .then(function(solutions) {
+      var transpilations = solutions.filter(function (solution) {
+        return solution !== exercise.solution;
+      }).map(function (solution) {
+        return writeTranspiled(solution, exercise.requireImportString);
+      });
+      return q.all(transpilations);
+    })
+    .then(function() {
       return q.all([
         writeTranspiled(exercise.submission, exercise.requiredString),
         writeTranspiled(exercise.solution, exercise.requiredString)
       ]);
     })
     .spread(function (newSubmission, newSolution) {
-        exercise.submission = newSubmission;
-        exercise.solution = newSolution;
+      exercise.submission = newSubmission;
+      exercise.solution = newSolution;
     })
     .nodeify(callback);
 }

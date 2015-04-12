@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const workshopper = require('workshopper');
+const workshopper = require('workshopper-adventure');
 const path        = require('path');
 
 function fpath (f) {
@@ -13,5 +13,6 @@ workshopper({
   subtitle    : 'Learn ES6 features using babel',
   appDir      : __dirname,
   menuItems   : [],
+  languages   : ['ja'],
   exerciseDir : fpath('./exercises/')
 })

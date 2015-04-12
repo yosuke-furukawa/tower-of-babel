@@ -13,7 +13,7 @@ class Character {
     return this.health_;
   }
   toString() {
-    return "x: " + this.x + " y: " + this.y + " health: " + this.health_;
+    return `x: ${this.x} y: ${this.y} health: ${this.health_}`;
   }
 }
 
@@ -27,7 +27,7 @@ class Player extends Character {
     this.y += dy;
   }
   toString() {
-    return "name: " + this.name + " " + super.toString();
+    return `name: ${this.name} ${super.toString()}`;
   }
 }
 

@@ -19,14 +19,14 @@ Iterable한 것을 만들려면, `Symbol.Iterator`를 사용하세요. `Symbol.I
 var fibonacci = {
   // Symbol.iterator를 가지는 메소드를 가지는 객체
   [Symbol.iterator]() {
-    let pre = 0, cur = 1;
+    let currentValue = 0, nextValue = 1;
     // iterator 객체는 next 메소드를 가진 객체를 반환
     return {
       next() {
         // next 안에서 반환 값(value)과 다음에 끝나는지 나타내는 속성(done)을 반환
-        [pre, cur] = [cur, pre + cur];
-        if (pre < 1000)  return { done: false, value: pre };
-        return { done: true };
+        if (nextValue > 1000) return { done: true };
+        [currentValue, nextValue] = [nextValue, currentValue + nextValue];
+        return { done: false, value: currentValue };
       }
     }
   }

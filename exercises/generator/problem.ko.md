@@ -4,12 +4,12 @@ generator를 사용한 fibonacci는 다음과 같습니다.
 
 ```javascript
 let fibonacci = function*(){
-  let pre = 0, cur = 1;
-  while (pre < 1000) {
+  let currentValue = 0, nextValue = 1;
+  while (currentValue < 1000) {
     // 여기서 destructuring으로 값을 스왑함
-    [pre, cur] = [cur, pre + cur];
+    [currentValue, nextValue] = [nextValue, currentValue + nextValue];
     // yield로 값을 반환
-    yield pre;
+    yield currentValue;
   }
 }();
 

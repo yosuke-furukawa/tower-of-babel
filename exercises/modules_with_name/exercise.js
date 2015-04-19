@@ -13,8 +13,8 @@ module.exports.addSetup(function(mode, cb) {
     console.error("USAGE: tower-of-babel run|verify <executeFile> <importFile>");
     throw new Error("invalid arguments");
   }
-  this.requiredString = ['export'];
   this.submissionImportFile = process.argv[4];
+  this.requireImportString = ['export'];
   var x = Math.floor(Math.random() * 100); 
   var y = Math.floor(Math.random() * 100); 
   this.requiredString = ['import'];

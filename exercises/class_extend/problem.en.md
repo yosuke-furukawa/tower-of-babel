@@ -1,8 +1,8 @@
 # Introduction
 
-Now that we are able to create and use classes, lets look at how we can create classes that build on execisting functionality.
+Now that we are able to create and use classes, lets look at how we can create classes that build on existing functionality.
 
-Take this class for example;
+Take this class for example:
 
 ```javascript
 class Character {
@@ -29,8 +29,7 @@ class Monster extends Character {
 }
 ```
 
-Here the `extends` keyword stands for `Monster` to inherit(build on) the methods defined in `Character`. When you use this syntax it is also possible
-to use `super`. `super` allows to specify whether the function defined in this class should be used or the class it extends from, the "super-class".
+In this example, the `extends` keyword lets `Monster` inherit(build on, reuse) the methods defined in `Character`. When you use this syntax it is also possible to use `super`. `super` allows to specify whether the function defined in this class should be used or the class it extends from, the "super-class".
 
 ```javascript
 class Monster extends Character {
@@ -47,7 +46,7 @@ class Monster extends Character {
 
 # Problem
 
-Rewrite the classes written below in the `prototype` and `util.inherit` fashion with then new ES6 syntax.
+Rewrite the classes that written below in the `prototype` and `util.inherit` fashion with then new ES6 syntax.
 
 ```javascript
 var util = require('util');
@@ -87,7 +86,7 @@ Player.prototype.toString = function() {
 
 ```
 
-When you have the file created, use it to make some damage and write the result to std.out like this:
+When you have the file created, use it to make some damage and write the result to the console like this:
 
 ```javascript
 var x = process.argv[2];

@@ -12,7 +12,6 @@ workshopper({
   title       : 'Tower of Babel',
   subtitle    : 'ES6をbabel使って勉強しましょう！',
   appDir      : __dirname,
-  menuItems   : [],
   languages   : ['en', 'ja'],
   defaultLang : 'ja',
   exerciseDir : fpath('./exercises/')

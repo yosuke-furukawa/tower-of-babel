@@ -11,7 +11,7 @@ $ npm install babel -g
 ```
 
 Once you did that, two new commands become available: `babel` and `babel-node`.
-Lets starting by using `babel-node`.
+Let's starting by using `babel-node`.
 
 Please create a `program.js` file that contains:
 

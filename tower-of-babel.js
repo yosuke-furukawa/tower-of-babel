@@ -10,9 +10,9 @@ function fpath (f) {
 workshopper({
   name        : 'tower-of-babel',
   title       : 'Tower of Babel',
-  subtitle    : 'Learn ES6 features using babel',
+  subtitle    : 'ES6をbabel使って勉強しましょう！',
   appDir      : __dirname,
-  menuItems   : [],
-  languages   : ['ja'],
+  languages   : ['en', 'ja'],
+  defaultLang : 'ja',
   exerciseDir : fpath('./exercises/')
 })

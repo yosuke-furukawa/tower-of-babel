@@ -1,7 +1,6 @@
-可変長のパラメータを受け取る関数を実現する場合、これまでは `arguments` と呼ばれる配列ライクなオブジェクトを扱うことで実現されていました。しかし、 `arguments` は配列ライクなオブジェクトではありますが、配列ではありません。つまり、配列のメソッドである、reduceやmapのようなメソッドは使えませんでした。 
+If you had to deal with an variable amount of parameters you would have had to use the `arguments` variable to process more parameters that you defined. But since `arguments` is not an array several methods (like map or reduce) could not be used.
 
-
-ES6からはこの `arguments` を使わなくても引数に `...` を付けることで可変長パラメータの処理を実現できます。この機能をRestパラメータと呼びます。Restパラメータを使うことで、配列ライクなオブジェクトではない配列として可変長パラメータを受け取ることが可能です。
+Since ES6 you can use `...` instead of `arguments` for the variable parameters. With this you can access the rest parameters through an array, not an object.
 
 ```javascript
 var sum = function(...args){
@@ -12,31 +11,29 @@ var sum = function(...args){
 console.log(sum(1,2,3)); // 6
 ```
 
-また関数呼び出しの際に配列のオブジェクトを可変長パラメータに変換することも可能です。これを Spread コールと呼びます。
+It is also now possible to call a method using a so-called `spread call` to pass arrays to amethod:
 
 ```javascript
-
 var sum = function(...args){
   let sum = args.reduce( (sum, n) => sum + n );
   return sum;
 };
 
 var array = [1, 2, 3, 4];
-// 配列から sum(1,2,3,4) で呼び出すのと同じ
+// This is like calling `sum(1, 2, 3, 4)`
 console.log(sum(...array)); // 10
 
 ```
 
-# 問題
+# Exercise
 
-JavaScript でこの可変長パラメータである Rest パラメータ呼び出しを使って、平均を取る関数を作ってみましょう。
+Calculate the average of all the numbers passed in using command line arguments using the `...` syntax.
 
 ```javascript
 var args = process.argv[2].split(",");
 args = args.map((arg)=> +arg);
 
-// ここに平均を取るavg関数を作る、作る際には
-// RESTパラメータを利用すること。
+// write a function called `avg` here that calculates the average.
 
 console.log(avg(...args));
 ```

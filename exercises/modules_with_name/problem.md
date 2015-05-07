@@ -1,26 +1,26 @@
-これまでJavaScriptでは言語レベルでモジュールの分割ができませんでした。
+Until now it wasn't possible possible in JavaScript on a language to split up code into modules.
 
-Node.js/io.jsには `commonjs` が組み込みで使えますが、ブラウザでは、JavaScriptをモジュール化してフロントで読み込む際には require.js 使ったり、 browserify 使ったりというライブラリで解決するか、 global空間に独自の名前空間を作ってそこに生やすといった処理がされてきました。
+In node.js/io.js it common to use `commonjs` modules but in the browser you had to use other solutions like require.js or browserify or were forced to create your own global namespaces.
 
-ES6 からはこのモジュール化をするための専用の構文 export と import が使えるようになりました。
+From ES6  you will be able to use the `export` and `import` keywords that are specially designed for creating modules. 
 
-基本的には commonjs と似ています、つまり、 export でオブジェクトをimportできるようにして、requireの代わりに import 構文でオブジェクトを利用できるようにします。
+Basically they look a lot like `commonjs` modules. With `export` you can specify the objects to be imported and instead of `require` you can use `import` to import the object.
 
-export側は下記のようになります。
+Using export looks like this:
 
 ```javascript
 // Message.js
 export const message = 'Hello Babel';
 ```
 
-また、import側は下記のようになります。
+And to inport that module you can use it like this:
 
 ```javascript
 import {message} from './Message';
 console.log(message); // Hello Babel
 ```
 
-これは、ちょうど commonjs で以下のように書くのと同じです。
+Using `common.js` the same module would be written like this:
 
 ```javascript
 exports.message = 'Hello Babel';
@@ -31,10 +31,11 @@ var message = require('./Message');
 console.log(message); // Hello Babel
 ```
 
-# 問題
+# Exercise   
 
-ここで、以下のcommonjsで書かれたモジュールを ES6 の module で書き換えてみましょう。
+Rewrite the following module as an EcmaScript 6 module:
 
+(module)
 ```javascript
 exports.PI = 3.141592;
 
@@ -49,6 +50,7 @@ exports.square(x) {
 };
 ```
 
+(executable)
 ```javascript
 var arg1 = process.argv[2];
 var arg2 = process.argv[3];
@@ -61,14 +63,14 @@ console.log(sqrt(+arg1));
 console.log(square(+arg2));
 ```
 
-また検証する時と実行するときには、moduleの参照元と実行ファイルの２つを下記の順序で渡してください。
+Make sure you pass in both the executable file and the module file to run/verify your solution.
 
 ```
-$ tower-of-babel run|verify <実行ファイル> <moduleの参照元ファイル>
+$ tower-of-babel run|verify <executable file> <module file>
 
-# 試しに実行する時の例
+# Example of running the converted modules
 $ tower-of-babel run Main.js Math.js
 
-# 検証する時の例
+# Example of verifying the converted modules
 $ tower-of-babel verify Main.js Math.js
 ```

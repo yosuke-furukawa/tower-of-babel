@@ -1,5 +1,6 @@
-前回、 module について説明しましたが、 export には2種類あります。通常の export と default export です。
-この違いについて説明しましょう。下記の JavaScript は前回の名前付き export を使っています。
+The former exercise explained the module system but there is another way to use `export` and that is `export default`.
+
+Some explanation about the difference: this module uses `export` like in the former exercise
 
 ```javascript
 // Message.js
@@ -13,14 +14,14 @@ export const obj = {
 };
 ```
 
-また、importする側は、exportされている対象の名前を指定して下記のようになります。
+the object that this module exports can be imported using the name like in the following example;
 
 ```javascript
 import {obj} from './Message';
 console.log(obj.greeting + ' ' + obj.name + ' ' + obj.version); // Hello Babel v5.0
 ```
 
-default export はこれとは異なり、exportする際に `export default` 構文を付けて公開します。下記のように記述できます。
+You can achive the same thing by using `export default`:
 
 ```javascript
 // Message.js
@@ -34,7 +35,7 @@ export default {
 };
 ```
 
-また、import側は下記のようになります。
+The import also changes a little
 
 ```javascript
 import Message from './Message';
@@ -42,9 +43,9 @@ console.log(
   Message.greeting + ' ' + Message.name + ' ' + Message.version); //Hello Babel v5.0
 ```
 
-先ほどとの違いが分かるでしょうか。 default export で export した場合は、 import する時にimportの対象をブレース `{...}` で囲む必要はなく、exportされている対象の名前を知る必要はありません。
+The difference should be obvious but lets make it clear: When you use `export default` you do not need to use the curly braces `{...}` and you don't need to know the name of the exported method.
 
-これは、ちょうど commonjs で `module.exports` を使って以下のように書くのと似ています。
+Written in `common.js` it would look like this:
 
 ```javascript
 const greeting = 'Hello';
@@ -57,11 +58,11 @@ module.exports = {
 };
 ```
 
-Node.jsでmodule.exportsを使って module を切り分けるのと同様にES6でもこの `export default` を扱うと簡単にモジュールを切り分けることが可能です。
+Like it is possible in Node.js to use `module.exports` you can use `export default` in ES6
 
-# 問題
+# Exercise
 
-ここで、前回記述した export で書かれたMath.jsと実行用のJSファイルを export default と import を使って書き換えてみましょう。
+Rewrite the methods that use the regular export here to the `export default` syntax.
 
 ```javascript
 // Math.js
@@ -89,14 +90,14 @@ console.log(sqrt(+arg1));
 console.log(square(+arg2));
 ```
 
-また検証する時と実行するときには、moduleの参照元と実行ファイルの２つを下記の順序で渡してください。
+Make sure you pass in both the executable file and the module file to run/verify your solution.
 
 ```
-$ tower-of-babel run|verify <実行ファイル> <moduleの参照元ファイル>
+$ tower-of-babel run|verify <executable file> <module file>
 
-# 試しに実行する時の例
+# Example of running the converted modules
 $ tower-of-babel run Main.js Math.js
 
-# 検証する時の例
+# Example of verifying the converted modules
 $ tower-of-babel verify Main.js Math.js
 ```

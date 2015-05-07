@@ -1,15 +1,15 @@
-前回の通り、for-of文を作ると、任意のIterableなオブジェクトを繰り返すことが可能です。ただし、記述してもらって分かる通り、 Iterable なオブジェクトを作るのに多少工夫が必要でした。今回はこのIterableなオブジェクトを作りやすくするための `generator` の扱いを覚えましょう。
+In the last exercise you used `Iterable`s to generate loops. But the Iterable object did require a lot of overhead. With the new `generator` syntax its possible to do the same thing with less effort.
 
-generatorを使った時のfibonacciは以下のようになります。
+Here is an example of the generator syntax:
 
 ```javascript
 let fibonacci = function*(){
-  let currentValue = 0, nextValue = 1;
-  while (currentValue < 1000) {
-    // ここでdestructuringで値をswapさせる。
-    [currentValue, nextValue] = [nextValue, currentValue + nextValue];
-    // yieldで値を返す
-    yield currentValue;
+  let pre = 0, cur = 1;
+  while (pre < 1000) {
+    // Here we destruct the former state
+    [pre, cur] = [cur, pre + cur];
+    // and yield (return) each step
+    yield pre;
   }
 }();
 
@@ -18,9 +18,8 @@ for (var n of fibonacci) {
 }
 ```
 
-先ほどとの違いは何でしょうか。 関数に `function*` が入っています。また、`return` を使っている所が `yield` に変わっています。
+The difference to other ways is the `function*` notation and that you use `yield` where you would have used `return` before.
 
-# 問題
+# Exercise
 
-ではここで、先ほど作成した FizzBuzz 問題を generator で書き換えてみましょう。
-
+Create the same FizzBuzz algorithm as explained in the last exercise but this time usin the new `generator` syntax.

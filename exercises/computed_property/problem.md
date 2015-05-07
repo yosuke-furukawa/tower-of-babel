@@ -1,39 +1,39 @@
-ES6から、オブジェクトリテラルの記述方式が少し変わります。オブジェクトのプロパティ"名"に式を評価させることができるようになります。
+In ES6 the way to access and define object literals has been improved. It is now possible to use expressions as property names.
 
-これまでは、プロパティ名に動的な値を入れる際は下記のようにしていました。
+Before you had to define dynamic properties of objects like this:
 
 ```javascript
-var prop = "hoge";
+var prop = "foo";
 
 var obj = {};
-obj[prop] = "fuga";
+obj[prop] = "bar";
 ```
 
-これが ES6 からはこうなります。
+is possible to be written like this in ES6:
 
 ```javascript
-var prop = "hoge";
+var prop = "foo";
 var obj = {
-  [prop]: "fuga"
+  [prop]: "bar"
 };
 ```
 
-これを Computed Property と呼びます。
+This is called `Computed Property`.
 
-`[]` で囲まれたキーは式を評価させることができるので下記のような事も可能です。
+The content of `[]` can also be a function:
 
 ```javascript
 var obj = {
-  // 関数を作って中で実行する
-  [(()=>"hoge" + "fuga")()]: "foo"
+  // using an inline function
+  [(()=>"bar" + "baz")()]: "foo"
 };
 ```
 
-動的にキーが切り替わるような場合でもComputed Propertyをうまく使うことで演算した結果を一時的な変数に持たなくて済みます。
+In this case the key will not be the function but the string returned by the function. With the new `Computed Property` syntax you can express dynamic properties without using temporary variables.
 
-# 問題
+# Exercise
 
-以下のオブジェクトを Computed Property を使って書き換えてみましょう。
+Rewrite the following code using the new `Computed Property` method:
 
 ```javascript
 var evenOrOdd = +process.argv[2];
@@ -45,4 +45,4 @@ obj[sum] = sum;
 console.log(obj);
 ```
 
-可能であれば、一時変数を全く使わずに表現してみてください。
+Try to solve it without any temporary variable.

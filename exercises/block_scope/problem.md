@@ -1,6 +1,6 @@
-`let` , `const` という新しい変数宣言ができるようになりました。これはblockスコープと呼ばれています。これまでのJavaScriptの場合、変数の生存するスコープを表現するのにfunctionで囲む必要がありました。しかし、let/constを使うことで、functionだけではなくブレース`{ ... }`で囲まれた領域がスコープになります。
+Two new keywords called `let` and `const` allow the definition of variables in a block scope. Traditional variables defined with `var` have always been defined for the whole function scope. The restriction of a block scope means that `let`/`const` are defined to be used within curly braces `{ ... }`.
 
-letは再代入可能な変数ですが、constは再代入不可能な変数です。constはちょうど Java で言うところの final があたったような状態になります。
+Variables defined with `let` are changeable but `const` doesn't allow reassignments. `const` is much like Java's `final` key word.
 
 ```javascript
 // block.js
@@ -10,37 +10,37 @@ letは再代入可能な変数ですが、constは再代入不可能な変数で
   const tmp = a;
   a = b;
   b = tmp;
-  // tmp = 30; 再代入はできない SyntaxErrorになる。
+  // tmp = 30; Can't do that, will result in a SyntaxError
 }
 
-// a = 20、aはvarで宣言しているのでブロックスコープの外からも参照可能。
+// a = 20、a is defined with `var` so it is accessible outside of the scope
 console.log(a);
-// letで定義したbはブロックスコープの外からは解決できない、ReferenceError b is not defined になる。
+// variables defined with `let` are not available. This will result in: ReferenceError b is not defined
 console.log(b);
-// constもスコープの中でのみ有効、tmp is not defined
+// Same goes for const: tmp is not defined
 console.log(tmp);
 ```
 
-let/constをなるべく利用したほうがうかつに変数がスコープの外に漏れてしまう恐れを防ぐことができます。
+Using `let` and `const` is recommended because its harder to leak variables to outer scopes.
 
-# 問題
+# Exercise
 
-実際に let と const を使って期待の効果を実現してみましょう。
+Modify this file by choosing either `var`, `let` or `const` to make it do the behavior described in the comments
 
 ```javascript
 'use strict';
-// 変数 a はblockスコープの中でも外でも再代入可能な有効な変数です。変数宣言の方法(var|let|const)のいずれを利用するべきか検討してください
+// This variable `a` should be accessable outside of the blog scope.
 var|let|const a = 5;
 
-// 変数 b は再代入不可能な変数です。変数宣言の方法(var|let|const)のいずれを利用するべきか検討してください
+// This variable `b` should not be reassignable.
 var|let|const b = process.argv[2];
 
 if (a === 5) {
-  // ここでの変数 c は再代入可能ですが、このblockの中でだけ有効な変数です。変数宣言の方法(var|let|const)のいずれを利用するべきか検討してください。
+  // This variable `c` should only be valid in this block.
   var|let|const c = 4;
   console.log(c);  // 4
 
-  // ここでの変数 b はblockの中だけで有効な変数です。変数宣言の方法(var|let|const)のいずれを利用するべきか検討してください。
+  // This variable `c` should only be valid in this block.
   var|let|const b = 8;
   console.log(b); // 8
 } 
@@ -48,10 +48,10 @@ if (a === 5) {
 console.log(a); // 5
 console.log(b);
 try {
-  // ここで cに対して値を変更してみましょう。
+  // Trying to change the value of `c`
   c = 1000;
 } catch (e) {
-  // c is not defined エラーが発生することを確認して下さい。
+  // but an `c is not defined` error should occur.
   console.log(e);
 }
 ```

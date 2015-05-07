@@ -1,5 +1,4 @@
-# Introduction
-When you wanted to write class-like structures in JavaScript before ES6 you had to use the `prototype` property of functions like this:
+JavaScriptでクラスライクなものを作るときは、コンストラクタとして関数を定義し、prototypeに対してメソッドを定義することで実現してきました。
 
 ```javascript
 var Person = function(name) {
@@ -20,13 +19,9 @@ alice.setName('bob');
 alice.getName(); // bob
 ```
 
-This way of writing a class is not entirely unpracticable but it has
-several shortcomings: You need to add `prototype` for every method
-definition and the defining `function` doubles as the type's constructor
-both comes with the requirement to know a few "tricks" to deal with classes properly. ES6 added a new syntax to define class as a mitigation for those
-shortcomings.
+一方で、この書き方はそこまで直感的とは言えず、この書き方を行う際には `prototype` に関する知識やコンストラクタを `function` として定義する事が可能である事を知っておく必要があります。 ES6 からはこのクラスを定義するための糖衣構文が追加されました。
 
-The same class as before written with the new ES6 syntax would look like this:
+上のJavaScriptをES6のクラスを使って変更すると下記のようになります。
 
 ```javascript
 class Person {
@@ -47,9 +42,9 @@ alice.setName('bob');
 alice.getName(); // bob
 ```
 
-# Exercise
+# 問題
 
-Rewrite the following class in the new ES6 class syntax:
+下記のクラスを ES6 の class 構文を使って書き換えてみましょう。
 
 ```javascript
 var Character = function(x, y) {
@@ -71,7 +66,7 @@ Character.prototype.toString = function() {
 };
 ```
 
-and then use the class like this:
+書き換えたら、記述したクラスの末尾に対して、下記の操作を追記してください。
 
 ```javascript
 var x = process.argv[2];

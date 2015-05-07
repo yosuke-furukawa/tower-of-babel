@@ -1,10 +1,7 @@
-# Introduction
-
-Now that we are able to create and use classes, lets look at how we can create classes that build on existing functionality.
-
-Take this class for example:
+Classが存在するという事は継承も存在します。この回では継承を扱ってクラスを作ってみましょう。
 
 ```javascript
+// Characterクラス
 class Character {
   constructor(x, y) {
     this.x = x;
@@ -16,11 +13,8 @@ class Character {
     character.health_ -= 10;
   }
 }
-```
 
-it is possible to build on the character class like this:
-
-```javascript
+// CharacterをMonsterクラスに継承
 class Monster extends Character {
   constructor(x, y, name) {
     super(x, y);
@@ -29,24 +23,27 @@ class Monster extends Character {
 }
 ```
 
-In this example, the `extends` keyword lets `Monster` inherit(build on, reuse) the methods defined in `Character`. When you use this syntax it is also possible to use `super`. `super` allows to specify whether the function defined in this class should be used or the class it extends from, the "super-class".
+基本的に、 `extends` キーワードで継承します。継承されたクラスは親クラスの機能を引き継ぎます。
+親クラスの持つメソッドやメンバーを子クラスから呼び出す場合、 `super` というキーワードを利用します。
 
 ```javascript
+// CharacterをMonsterクラスに継承
 class Monster extends Character {
   constructor(x, y, name) {
     super(x, y);
     this.name = name;
   }
   attack(character) {
+    // super で親クラスのattackをそのまま呼ぶ
     super.attack(character);
     character.health_ -= 5;
   }
 }
 ```
 
-# Problem
+# 問題
 
-Rewrite the classes that written below in the `prototype` and `util.inherit` fashion with then new ES6 syntax.
+下記のprototypeとutil.inheritで書かれたクラスを ES6 の class 構文を使って書き換えてみましょう。
 
 ```javascript
 var util = require('util');
@@ -86,7 +83,7 @@ Player.prototype.toString = function() {
 
 ```
 
-When you have the file created, use it to make some damage and write the result to the console like this:
+書き換えたら、クラスに対して、下記の操作を追記してください。
 
 ```javascript
 var x = process.argv[2];
@@ -100,3 +97,5 @@ player.damage();
 player.move(7, 8);
 console.log(player.toString());
 ```
+
+

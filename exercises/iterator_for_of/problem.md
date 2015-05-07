@@ -1,63 +1,63 @@
-ES6から、新しく `for of` という文法が追加されました。これは繰り返しをおこなう `for` 文の拡張です。以下の様な記述を行います。
+In ES6 the `for of` way to iterate over an array has been added. It is an alternative for iterating over an array. Let's look at an example:
 
 ```javascript
 var res = [];
-// ここが for of 文
+// The next line contains the for-of syntax.
 for (let element of [1, 2, 3]) {
   res.push(element * element);
 }
 console.log(res); // [1, 4, 9]
 ```
 
-これまでの for 文と何が違うのでしょうか。これまでの for in 文と異なり、 of に渡すのはコレクションに限りません。
-繰り返し可能なもの、Iterable なものであれば for of 文で繰り返すことができます。
+So, what is the difference to the classic `for` syntax? Unlike `for` the `for of` syntaxi is not limited to arrays. As long as something can be repeated, as long as its `Iterable` it can be used with `for of`.
 
-Iterable なものを作るには、 `Symbol.Iterator` を使います。 `Symbol.Iterator` の定義は下記の通り。
+To make something iterable you Iterable you have to use `Symbol.Iterator`. Here is an example of how to use `Symbol.Iterator`:
 
 ```javascript
-// 1000までの値を返すfibonacciを作る
+// calculating the fibonacci sequence to the 1000st number
 var fibonacci = {
-  // Symbol.iteratorを持つメソッドを持つオブジェクトにする
+  // Make a method that has the Symbol.iterator function.
   [Symbol.iterator]() {
-    let currentValue = 0, nextValue = 1;
-    // iteratorオブジェクトは nextメソッドを持つオブジェクトを返す
+    let pre = 0, cur = 1;
+    // The resulting iterator object has to have a next method:
     return {
       next() {
-        // nextの中では返す値(value)と次で終わりかどうかを示すプロパティ(done)を返す
-        if (nextValue > 1000) return { done: true };
-        [currentValue, nextValue] = [nextValue, currentValue + nextValue];
-        return { done: false, value: currentValue };
+        // The result of next has to be an object with the property `done` that states whether or not the iterator is done. 
+        [pre, cur] = [cur, pre + cur];
+        if (pre < 1000)  return { done: false, value: pre };
+        return { done: true };
       }
     }
   }
 }
 
+// The result's value property will become `n`.
 for (var n of fibonacci) {
   console.log(n);
 }
 ```
 
-# 問題
+# Exercise
 
-ではここで、 Iterable なオブジェクトを作成し、for-ofループで回してみましょう。100までカウントするFizzBuzz 問題を作って for-of ループで回しましょう。
+Create a Iteratable object that does the FizzBuzz calculation for a given amount of numbers.
 
-# ヒント
+# Hints
 
-## FizzBuzz問題
+## FizzBuzz Problem
 
-1からXまでの数をプリントするプログラムを書け。ただし3の倍数のときは数の代わりに「Fizz」と、5の倍数のときは「Buzz」とプリントし、3と5両方の倍数の場合には「FizzBuzz」とプリントすること。
+List the numbers from 1 to the max (passed in using `process.argv`. However for every number that is devidable by 3 you write `Fizz` and for ever number that is devidable by 5 you write `Buzz` and for every number that is devidable by both 3 and 5 you write `FizzBuzz`.
 
-FizzBuzzは下記のように作ります。
+Here is an example.
 
 ```javascript
 const max = process.argv[2];
 let FizzBuzz = {
   [Symbol.iterator]() {
-    // ここに FizzBuzzの計算を書く
-    // ヒント：
-    // 計算を継続させたい時、つまり終了条件である繰り返し回数が max を超えていない時は
-    // done: false のオブジェクトを返却する。
-    // 逆に終了条件をみたすときには done: true のオブジェクトを返却する。
+    // here belongs the FizzBuzz logic
+    // Hint：
+    // When its finished you have to return an object
+    // with the property `done: true` but before you 
+    // have to set `done: false`
   }
 }
 

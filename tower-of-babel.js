@@ -12,7 +12,7 @@ workshopper({
   title       : 'Tower of Babel',
   subtitle    : 'ES6をbabel使って勉強しましょう！',
   appDir      : __dirname,
-  languages   : ['en', 'ja'],
+  languages   : ['en', 'ja', 'ko'],
   defaultLang : 'ja',
   exerciseDir : fpath('./exercises/')
 })

@@ -1,0 +1,18 @@
+{
+	"subtitle": "Learn ES6 features using babel",
+	"exercise": {
+		"BABEL SETUP":            "BABEL SETUP",
+		"CLASS":                  "CLASS",
+		"CLASS EXTEND":           "CLASS EXTEND",
+		"MODULES WITH NAME":      "MODULES WITH NAME",
+		"MODULES DEFAULT EXPORT": "MODULES DEFAULT EXPORT",
+		"BLOCK SCOPE":            "BLOCK SCOPE",
+		"COMPUTED PROPERTY":      "COMPUTED PROPERTY",
+		"ITERATOR FOR OF":        "ITERATOR FOR OF",
+		"GENERATOR":              "GENERATOR",
+		"DESTRUCTURE":            "DESTRUCTURE",
+		"ARROW FUNCTION":         "ARROW FUNCTION",
+		"REST AND SPREAD":        "REST AND SPREAD"
+	}
+}
+

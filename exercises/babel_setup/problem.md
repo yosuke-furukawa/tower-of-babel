@@ -1,37 +1,57 @@
-これから ES6 に関してのエクササイズを開始します。
-ES6の構文は現時点では node.js を使っても全ての機能は使えません。
 
-そこで、一旦 ES6 の文法を有効にするために、 `babel` をインストールします。
+# Introduction
+This is the first exercise to learn ES6 using babel.
+
+Even with the power of latest node.js version it isn't possible right now to use all of the features from ES6.
+
+To enable a lot of the new grammar there is additional package `babel` which you can install using:
 
 ```shell
 $ npm install babel -g
 ```
 
-こうすると、 `babel` と `babel-node` の２つのコマンドが有効になります。
-一旦 `babel-node` を利用してみましょう。
+Once you did that, two new commands become available: `babel` and `babel-node`.
+Let's starting by using `babel-node`.
 
-下記のファイルを `program.js` という名前で保存してください。
+Please create a `program.js` file that contains:
 
 ```javascript
 console.log(`Hello Babel`);
 ```
 
-保存したら、
+Once you saved it you will be able to run the program like this:
 
 ```shell
 $ babel-node program.js
 ```
 
-と実行し、実行結果を確認して下さい。
+Try to run it and make sure it shows `Hello Babel`.
 
-# 問題
+# Exercise
+Create a javascript program that takes the the first command-line argument and 
+outputs it right after a `"Hello "` String using ES6 template strings.
 
-コマンドライン引数を受け取ってそれを、 Helloの後につける下記の プログラムを作成してください。
+# Hints
+It is possible to pass command-line arguments to a babel program like this:
 
-```javascript
-var arg = process.argv[2];
-console.log(`Hello ${arg}`);
+```
+babel-node my-program.js an-argument
 ```
 
-`babel-node program.js babel` を実行して実行結果を見てみてください。
-実行が終わったら、 `tower-of-babel verify program.js`
+To access the arguments you can use the `process.argv` array.
+
+**Important!** The `process.argv` array contains not just the arguments but also the runtime (first variable) and the script file loaded (second variable)!
+This means the first argument is stored at the third position:
+
+```javascript
+process.argv[2]
+```
+
+ES6 template strings is a new way to declare strings using the `\`` character. In template strings you can access local variables like this:
+
+```javascript
+var a = 1;
+console.log(`${a}`);
+```
+
+Read more about template strings here: http://updates.html5rocks.com/2015/01/ES6-Template-Strings

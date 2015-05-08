@@ -1,10 +1,10 @@
-Until now it wasn't possible possible in JavaScript on a language to split up code into modules.
+Until now it wasn't possible to split up code into modules in JavaScript.
 
-In node.js/io.js it common to use `commonjs` modules but in the browser you had to use other solutions like require.js or browserify or were forced to create your own global namespaces.
+In node.js/io.js it's common to use `commonjs` modules but in the browser you had to use other solutions like require.js or browserify or were forced to create your own global namespaces.
 
 From ES6  you will be able to use the `export` and `import` keywords that are specially designed for creating modules. 
 
-Basically they look a lot like `commonjs` modules. With `export` you can specify the objects to be imported and instead of `require` you can use `import` to import the object.
+Basically they look a lot like `commonjs` modules. With `export` you can specify the objects to be exported and instead of `require` you can use `import` to import the object.
 
 Using export looks like this:
 
@@ -13,7 +13,7 @@ Using export looks like this:
 export const message = 'Hello Babel';
 ```
 
-And to inport that module you can use it like this:
+And to import that module you can use it like this:
 
 ```javascript
 import {message} from './Message';
@@ -27,7 +27,7 @@ exports.message = 'Hello Babel';
 ```
 
 ```javascript
-var message = require('./Message');
+var message = require('./Message').message;
 console.log(message); // Hello Babel
 ```
 

@@ -33,7 +33,7 @@ console.log(message); // Hello Babel
 
 # Exercise   
 
-Rewrite the following module as an EcmaScript 6 module:
+Rewrite the following module & executable using EcmaScript 6 module:
 
 (module)
 ```javascript

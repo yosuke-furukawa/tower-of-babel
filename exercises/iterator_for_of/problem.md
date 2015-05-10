@@ -1,4 +1,4 @@
-In ES6 the `for of` way to iterate over an array has been added. It is an alternative for iterating over an array. Let's look at an example:
+In ES6 the `for of` way to iterate over an array has been added. Let's look at an example:
 
 ```javascript
 var res = [];
@@ -9,9 +9,9 @@ for (let element of [1, 2, 3]) {
 console.log(res); // [1, 4, 9]
 ```
 
-So, what is the difference to the classic `for` syntax? Unlike `for` the `for of` syntaxi is not limited to arrays. As long as something can be repeated, as long as its `Iterable` it can be used with `for of`.
+So, what is the difference to the classic `for` syntax? Unlike `for` the `for of` syntax is not limited to arrays. As long as something can be repeated, as long as it is `Iterable`, it can be used with `for of`.
 
-To make something iterable you Iterable you have to use `Symbol.Iterator`. Here is an example of how to use `Symbol.Iterator`:
+To make something iterable you have to use `Symbol.Iterator`. Here is an example of how to use `Symbol.Iterator`:
 
 ```javascript
 // calculating the fibonacci sequence to the 1000st number
@@ -22,7 +22,7 @@ var fibonacci = {
     // The resulting iterator object has to have a next method:
     return {
       next() {
-        // The result of next has to be an object with the property `done` that states whether or not the iterator is done. 
+        // The result of next has to be an object with the property `done` that states whether or not the iterator is done.
         [pre, cur] = [cur, pre + cur];
         if (pre < 1000)  return { done: false, value: pre };
         return { done: true };
@@ -39,13 +39,13 @@ for (var n of fibonacci) {
 
 # Exercise
 
-Create a Iteratable object that does the FizzBuzz calculation for a given amount of numbers.
+Create an iteratable object that does the FizzBuzz calculation for a given amount of numbers.
 
 # Hints
 
 ## FizzBuzz Problem
 
-List the numbers from 1 to the max (passed in using `process.argv`. However for every number that is devidable by 3 you write `Fizz` and for ever number that is devidable by 5 you write `Buzz` and for every number that is devidable by both 3 and 5 you write `FizzBuzz`.
+List the numbers from 1 to the max (passed in using `process.argv`). However for every number that is divisible by 3 you write `Fizz` and for ever number that is divisible by 5 you write `Buzz` and for every number that is divisible by both 3 and 5 you write `FizzBuzz`.
 
 Here is an example.
 
@@ -56,7 +56,7 @@ let FizzBuzz = {
     // here belongs the FizzBuzz logic
     // Hint：
     // When its finished you have to return an object
-    // with the property `done: true` but before you 
+    // with the property `done: true` but before you
     // have to set `done: false`
   }
 }

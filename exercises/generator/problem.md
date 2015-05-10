@@ -22,4 +22,4 @@ The difference to other ways is the `function*` notation and that you use `yield
 
 # Exercise
 
-Create the same FizzBuzz algorithm as explained in the last exercise but this time usin the new `generator` syntax.
+Create the same FizzBuzz algorithm as explained in the last exercise but this time using the new `generator` syntax.

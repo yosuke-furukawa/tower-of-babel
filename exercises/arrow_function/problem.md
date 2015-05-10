@@ -1,4 +1,4 @@
-In ES6 the arrow function declaration has been added to specification. With the arrow declaration it is possible to write small functions even shorter.
+In ES6 the arrow function declaration has been added. With the arrow declaration it is possible to write shorter declarations for small functions.
 
 ```javascript
 setTimeout(function(){
@@ -40,6 +40,6 @@ console.log(result);
 For example, in case of ["Hello", "Arrow", "Function"] should result in "HAF". Here is a full example:
 
 ```shell
-$ babel-node program.js Hi this is yosuke 
+$ babel-node program.js Hi this is yosuke
 Htiy
 ```

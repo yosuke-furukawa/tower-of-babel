@@ -1,6 +1,6 @@
 Two new keywords called `let` and `const` allow the definition of variables in a block scope. Traditional variables defined with `var` have always been defined for the whole function scope. The restriction of a block scope means that `let`/`const` are defined to be used within curly braces `{ ... }`.
 
-Variables defined with `let` are changeable but `const` doesn't allow reassignments. `const` is much like Java's `final` key word.
+Variables defined with `let` are changeable but `const` doesn't allow reassignments. `const` is much like Java's `final` keyword.
 
 ```javascript
 // block.js
@@ -25,7 +25,7 @@ Using `let` and `const` is recommended because its harder to leak variables to o
 
 # Exercise
 
-Modify this file by choosing either `var`, `let` or `const` to make it do the behavior described in the comments
+Modify this file by choosing either `var`, `let` or `const` to make the code behave as described in the comments
 
 ```javascript
 'use strict';
@@ -43,7 +43,7 @@ if (a === 5) {
   // This variable `c` should only be valid in this block.
   var|let|const b = 8;
   console.log(b); // 8
-} 
+}
 
 console.log(a); // 5
 console.log(b);

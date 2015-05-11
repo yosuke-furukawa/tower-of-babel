@@ -46,7 +46,7 @@ class Monster extends Character {
 
 # Problem
 
-Rewrite the classes that written below in the `prototype` and `util.inherit` fashion with then new ES6 syntax.
+Rewrite the classes that are written below in the `prototype` and `util.inherit` fashion with the new ES6 syntax.
 
 ```javascript
 var util = require('util');

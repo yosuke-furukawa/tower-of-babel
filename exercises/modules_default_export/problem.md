@@ -14,14 +14,14 @@ export const obj = {
 };
 ```
 
-the object that this module exports can be imported using the name like in the following example;
+the object that this module exports can be imported using the name as in this example;
 
 ```javascript
 import {obj} from './Message';
 console.log(obj.greeting + ' ' + obj.name + ' ' + obj.version); // Hello Babel v5.0
 ```
 
-You can achive the same thing by using `export default`:
+You can achieve the same thing by using `export default`:
 
 ```javascript
 // Message.js
@@ -35,7 +35,7 @@ export default {
 };
 ```
 
-The import also changes a little
+The import then changes a little
 
 ```javascript
 import Message from './Message';
@@ -58,7 +58,7 @@ module.exports = {
 };
 ```
 
-Like it is possible in Node.js to use `module.exports` you can use `export default` in ES6
+So, you can use `export default` just like you would use `module.exports` in Node.js.
 
 # Exercise
 

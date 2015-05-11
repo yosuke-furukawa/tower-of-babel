@@ -1,6 +1,6 @@
-This new syntax also similar to the destructuring in Clojure. It makes it easier to access properties of arrays and objects.
+This new syntax is similar to the destructuring in Clojure. It makes it easier to access properties of arrays and objects.
 
-Let's examine the syntax on a little example. The most common example is the swapping of the value in two variables:
+Let's examine the syntax by using a little example. The most common example is the swapping of the value in two variables:
 
 ```javascript
 var foo = 123;
@@ -22,7 +22,7 @@ var bar = 456;
 var [bar, foo] = [foo, bar];
 ```
 
-It is even possible to access elements that are children of the array. 
+It is even possible to access elements that are children of the array.
 
 ```javascript
 var [a, [b], [c]] = ['hello', [', '], ['world']];

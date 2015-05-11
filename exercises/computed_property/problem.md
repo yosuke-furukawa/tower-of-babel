@@ -9,7 +9,7 @@ var obj = {};
 obj[prop] = "bar";
 ```
 
-is possible to be written like this in ES6:
+can now be written like this in ES6:
 
 ```javascript
 var prop = "foo";
@@ -18,7 +18,7 @@ var obj = {
 };
 ```
 
-This is called `Computed Property`.
+This is called a `Computed Property`.
 
 The content of `[]` can also be a function:
 
@@ -29,7 +29,7 @@ var obj = {
 };
 ```
 
-In this case the key will not be the function but the string returned by the function. With the new `Computed Property` syntax you can express dynamic properties without using temporary variables.
+In this case the key the string returned by the function. With the new `Computed Property` syntax you can express dynamic properties without using temporary variables.
 
 # Exercise
 

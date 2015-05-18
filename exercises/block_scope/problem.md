@@ -40,7 +40,7 @@ if (a === 5) {
   var|let|const c = 4;
   console.log(c);  // 4
 
-  // This variable `c` should only be valid in this block.
+  // This variable `b` should only be valid in this block.
   var|let|const b = 8;
   console.log(b); // 8
 }

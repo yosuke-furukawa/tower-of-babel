@@ -20,7 +20,7 @@
     "babel-runtime": "^5.0.12",
     "q": "^1.2.0",
     "rimraf": "^2.3.2",
-    "workshopper-adventure": "git://github.com/martinheidegger/workshopper.git#adventure",
+    "workshopper-adventure": "^3.4.5",
     "workshopper-exercise": "^2.3.0"
   }
 }

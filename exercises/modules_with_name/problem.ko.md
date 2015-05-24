@@ -44,7 +44,7 @@ var _sqrt = function(s, x, last){
 exports.sqrt = function(s){
   return _sqrt(s, s/2.0, 0.0);
 };
-exports.square(x) {
+exports.square = function(x) {
   return x * x;
 };
 ```

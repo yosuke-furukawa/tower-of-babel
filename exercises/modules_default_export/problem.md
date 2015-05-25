@@ -74,7 +74,7 @@ var _sqrt = function(s, x, last){
 export const sqrt = function(s){
   return _sqrt(s, s/2.0, 0.0);
 };
-export const square(x) {
+export const square = function(x){
   return x * x;
 };
 ```

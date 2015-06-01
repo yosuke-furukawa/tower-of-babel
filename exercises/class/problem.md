@@ -1,5 +1,5 @@
 # Introduction
-When you wanted to write class-like structures in JavaScript before, ES6 you had to use the `prototype` property of functions like this:
+When you wanted to write class-like structures in JavaScript before ES6, you had to use the `prototype` property of functions like this:
 
 ```javascript
 var Person = function(name) {

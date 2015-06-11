@@ -27,7 +27,7 @@ exports.message = 'Hello Babel';
 ```
 
 ```javascript
-var message = require('./Message');
+var message = require('./Message').message;
 console.log(message); // Hello Babel
 ```
 

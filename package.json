@@ -1,6 +1,6 @@
 {
   "name": "tower-of-babel",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "repository": {
     "type": "git",
     "url": "git://github.com/yosuke-furukawa/tower-of-babel"
@@ -22,5 +22,6 @@
     "rimraf": "^2.3.2",
     "workshopper-adventure": "^3.4.5",
     "workshopper-exercise": "^2.3.0"
-  }
+  },
+  "scripts": {}
 }

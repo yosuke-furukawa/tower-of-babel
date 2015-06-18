@@ -12,7 +12,7 @@ class Character {
     this.health_ = 100;
   }
   attack(character) {
-    if (character !instanceof Character) throw new Error('');
+    if (!(character instanceof Character)) throw new Error('');
     character.health_ -= 10;
   }
 }

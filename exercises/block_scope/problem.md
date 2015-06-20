@@ -29,7 +29,7 @@ Modify this file by choosing either `var`, `let` or `const` to make the code beh
 
 ```javascript
 'use strict';
-// This variable `a` should be accessable outside of the block scope.
+// This variable `a` should be accessible outside of the block scope.
 var|let|const a = 5;
 
 // This variable `b` should not be reassignable.

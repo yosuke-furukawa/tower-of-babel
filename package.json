@@ -16,8 +16,8 @@
     "workshopper"
   ],
   "dependencies": {
-    "babel-core": "^5.0.12",
-    "babel-runtime": "^5.0.12",
+    "babel-core": "5.6.20",
+    "babel-runtime": "5.6.20",
     "q": "^1.2.0",
     "rimraf": "^2.3.2",
     "workshopper-adventure": "^3.4.5",

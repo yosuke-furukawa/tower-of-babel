@@ -1,6 +1,6 @@
-In ES6 the way to access and define object literals has been improved. It is now possible to use expressions as property names.
+La forma de acceder y definir los objetos literales en ES6 han sido mejorados. Ahora es posible usar expresiones como nombres de propiedad.
 
-Before you had to define dynamic properties of objects like this:
+Antes, había que definir las propiedades dinámicas de los objetos así:
 
 ```javascript
 var prop = "foo";
@@ -8,8 +8,7 @@ var prop = "foo";
 var obj = {};
 obj[prop] = "bar";
 ```
-
-can now be written like this in ES6:
+Ahora en la nueva sintaxis ES6:
 
 ```javascript
 var prop = "foo";
@@ -17,10 +16,8 @@ var obj = {
   [prop]: "bar"
 };
 ```
-
-This is called a `Computed Property`.
-
-The content of `[]` can also be a function:
+Esto se conoce como `Propiedad computada`.
+El contenido de `[]` también puede ser un función:
 
 ```javascript
 var obj = {
@@ -28,12 +25,11 @@ var obj = {
   [(()=>"bar" + "baz")()]: "foo"
 };
 ```
+En este caso la clave es la cadena de texto que retorna función. Con la nueva sintaxis de `Propiedad Computada` podemos evaluar propiedades dinámicas sin necesidad de usar variables temporales.
 
-In this case the key the string returned by the function. With the new `Computed Property` syntax you can express dynamic properties without using temporary variables.
+# Ejercicio
 
-# Exercise
-
-Rewrite the following code using the new `Computed Property` method:
+Refactoriza el código siguiente mediante el método de `Propiedad Computada`.
 
 ```javascript
 var evenOrOdd = +process.argv[2];
@@ -44,5 +40,4 @@ obj[evenOrOddKey] = evenOrOdd;
 obj[sum] = sum;
 console.log(obj);
 ```
-
-Try to solve it without any temporary variable.
+Prueba de hacerlo sin ninguna variable temporal.

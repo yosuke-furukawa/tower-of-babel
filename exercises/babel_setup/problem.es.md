@@ -1,57 +1,54 @@
 
-# Introduction
-This is the first exercise to learn ES6 using babel.
+# Introducción
+Este es el primer ejercicio para aprender ES6 con Babel
 
-Even with the power of the latest version of node.js, it isn't possible right now to use all of the features from ES6.
+A pesar de la potencia de la última versión de node.js, todavía no podemos usar todas las novedades que incorpora ES6.
 
-To enable a lot of the new grammar, there is an additional package called `babel` which you can install using:
+Para poder hacerlo, necesitamos instalar un paquete adicional llamado `babel` haciendo lo siguiente:
 
 ```shell
 $ npm install babel -g
 ```
 
-Once you have done that, two new commands become available: `babel` and `babel-node`.
-Let's starting by using `babel-node`.
+Ona vez instalado, tendrás disponibles dos nuevos comandos: `babel` y `babel-node`.
+Empezaremos usando `babel-node`.
 
-Please create a `program.js` file that contains:
+Crea un archivo llamado `program.js` que contanga:
 
 ```javascript
 console.log(`Hello Babel`);
 ```
-
-Once you saved, it you will be able to run the program like this:
+Una vez guardado, podrás ejecutarlo de la siguiente forma:
 
 ```shell
 $ babel-node program.js
 ```
+Prueba de ejecutarlo y asegúrate de que muestra `Hello Babel`.
 
-Try to run it and make sure it shows `Hello Babel`.
+# Ejercicio
 
-# Exercise
-Create a javascript program that takes the the first command-line argument and
-outputs it right after a `"Hello "` String using ES6 template strings.
+Crea una aplicación javascript que obtenga el primer argumento de la línea de comandos y lo muestre justo después del *string* `"Hello "` usando las plantillas de ES6.
 
-# Hints
-It is possible to pass command-line arguments to a babel program like this:
+# Nota
+Puedes pasarle argumentos de línea de comandos a una aplicación babel así:
 
 ```
 babel-node my-program.js an-argument
 ```
+Para acceder a los argumentos puedes usar el array `process.argv`.
 
-To access the arguments you can use the `process.argv` array.
+**Importante!** El array `process.argv` no contiene únicamente los argumentos sino que además los del tiempo de ejecución (situado en la primera variable) y el script del archivo cargado (situado en la segunda)!
 
-**Important!** The `process.argv` array contains not just the arguments but also the runtime (first variable) and the script file loaded (second variable)!
-This means the first argument is stored at the third position:
+Esto significa que el primer argumento se almacena en la tercera posición.
 
 ```javascript
 process.argv[2]
 ```
 
-ES6 template strings are a new way to declare strings using the `\`` character. In template strings you can access local variables like this:
+Las plantillas de ES6 son una nueva manera de declarar strings utilizando el caracter `\``. En este tipo de plantillas puedes acceder a variables locales así:
 
 ```javascript
 var a = 1;
 console.log(`${a}`);
 ```
-
-Read more about template strings here: http://updates.html5rocks.com/2015/01/ES6-Template-Strings
+Puedes obtener más información sobre plantillas ES6 [aquí](http://updates.html5rocks.com/2015/01/ES6-Template-Strings)

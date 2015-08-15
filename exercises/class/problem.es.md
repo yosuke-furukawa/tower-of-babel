@@ -1,5 +1,5 @@
-# Introduction
-When you wanted to write class-like structures in JavaScript before ES6, you had to use the `prototype` property of functions like this:
+# Introducción
+Anteriormente a ES6, cuando queríamos escribir una estructura del tipo *clase* en javascript había que utilizar `prototype` como en el código siguiente:
 
 ```javascript
 var Person = function(name) {
@@ -19,13 +19,10 @@ alice.getName(); // alice
 alice.setName('bob');
 alice.getName(); // bob
 ```
+Aunque esta forma de escribir una clase no del todo incorrecta tiene algunas desventajas:
+Necesitas añadir `prototype` a la definición de cada método y la función definida se dobla con el constructor. Necesitas saber estos "trucos" para poder crear clases de forma adecuada. ES6 añade una nueva sintaxis para definir una clase.
 
-This way of writing a class is not entirely impractical but it has
-several shortcomings: You need to add `prototype` for every method
-definition and the defining `function` doubles as the type's constructor
-You need to know these "tricks" to deal with classes properly. ES6 adds a new syntax to define a class.
-
-The same class as before written with the new ES6 syntax would look like this:
+La misma clase escrita anteriorment en la nueva sintaxis ES6 quedaría así:
 
 ```javascript
 class Person {
@@ -46,9 +43,9 @@ alice.setName('bob');
 alice.getName(); // bob
 ```
 
-# Exercise
+# Ejercicio
 
-Rewrite the following class in the new ES6 class syntax:
+Re-escribe la siguiente clase utilizando la nueva sintaxis ES6:
 
 ```javascript
 var Character = function(x, y) {
@@ -69,8 +66,7 @@ Character.prototype.toString = function() {
   return "x: " + this.x + " y: " + this.y + " health: " + this.getHealth();
 };
 ```
-
-and then use the class like this:
+...y a continuación utiliza la clase así:
 
 ```javascript
 var x = process.argv[2];

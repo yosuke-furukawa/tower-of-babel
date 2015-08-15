@@ -1,6 +1,6 @@
-Two new keywords called `let` and `const` allow the definition of variables in a block scope. Traditional variables defined with `var` have always been defined for the whole function scope. The restriction of a block scope means that `let`/`const` are defined to be used within curly braces `{ ... }`.
+Dos nuevas definiciones de variables llamadas `let` y `const` aportan un ámbito de bloque a las variables. La definición de variable tradicional `var` está disponible en todo el ámbito de la función. La restricción del ámbito de las variables `let`/`const` a nivel de bloque nos indica que han de sólo están disponibles dentro de las llaves `{ ... }` en las que son declaradas.
 
-Variables defined with `let` are changeable but `const` doesn't allow reassignments. `const` is much like Java's `final` keyword.
+Mientras que podemos reasignar el contenido de las variables definidas con `let`, las definidas mediante `const` no nos permiten hacerlo. `const` se parece mucho a la palabra reservada `final` de Java.
 
 ```javascript
 // block.js
@@ -10,37 +10,37 @@ Variables defined with `let` are changeable but `const` doesn't allow reassignme
   const tmp = a;
   a = b;
   b = tmp;
-  // tmp = 30; Can't do that, will result in a SyntaxError
+  // tmp = 30; No puedes reasignar una const, devolverá SyntaxError
 }
 
-// a = 20、a is defined with `var` so it is accessible outside of the scope
+// a = 20、a está definida como `var` de forma que es accesible fuera del ámbito.
 console.log(a);
-// variables defined with `let` are not available. This will result in: ReferenceError b is not defined
+// las variables definidas con `let` no lo están. Esto nos devolverá: ReferenceError b is not defined
 console.log(b);
-// Same goes for const: tmp is not defined
+// Lo mismo ocurre con const: tmp is not defined
 console.log(tmp);
 ```
 
-Using `let` and `const` is recommended because its harder to leak variables to outer scopes.
+Se recomienda usar `let` y `const` ya que resulta más difícil que una variable salga de su ámbito de declaración de forma accidental.
 
-# Exercise
+# Ejercício
 
-Modify this file by choosing either `var`, `let` or `const` to make the code behave as described in the comments
+Modifica este archivo usando `var`, `let` o `const` de forma que el código se comporte tal y como está especificado en los comentarios:
 
 ```javascript
 'use strict';
-// This variable `a` should be accessible outside of the block scope.
+// La variable `a` ha de estar accesible fuera del ámbito de bloque.
 var|let|const a = 5;
 
-// This variable `b` should not be reassignable.
+// La variable `b` no ha de poder ser reasignada.
 var|let|const b = process.argv[2];
 
 if (a === 5) {
-  // This variable `c` should only be valid in this block.
+  // La variable `c` ha de estar disponible sólo en este bloque.
   var|let|const c = 4;
   console.log(c);  // 4
 
-  // This variable `b` should only be valid in this block.
+  // La variable `b` ha de estar disponible sólo en este bloque.
   var|let|const b = 8;
   console.log(b); // 8
 }
@@ -48,10 +48,10 @@ if (a === 5) {
 console.log(a); // 5
 console.log(b);
 try {
-  // Trying to change the value of `c`
+  // Intenta reasignar el valor de `c`
   c = 1000;
 } catch (e) {
-  // but an `c is not defined` error should occur.
+  // Has de obtener el siguiente error: `c is not defined`
   console.log(e);
 }
 ```

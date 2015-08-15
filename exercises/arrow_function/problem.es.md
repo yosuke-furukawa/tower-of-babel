@@ -25,7 +25,7 @@ var square2 = x => x * x;
 console.log(square2(4)); //16
 ```
 
-# Exercise
+# Ejercicio
 
 Procesa las variables que se pasan mediante `process.argv` y retorna la primera letra de cada palabra en una línea.
 

@@ -25,7 +25,7 @@ Se recomienda usar `let` y `const` ya que resulta más difícil que una variable
 
 # Ejercício
 
-Modifica este archivo usando `var`, `let` o `const` de forma que el código se comporte tal y como está especificado en los comentarios:
+Refactoriza este archivo usando `var`, `let` o `const` de forma que el código se comporte tal y como está especificado en los comentarios:
 
 ```javascript
 'use strict';

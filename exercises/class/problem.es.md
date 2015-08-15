@@ -45,7 +45,7 @@ alice.getName(); // bob
 
 # Ejercicio
 
-Re-escribe la siguiente clase utilizando la nueva sintaxis ES6:
+Refactoriza la siguiente clase utilizando la nueva sintaxis ES6:
 
 ```javascript
 var Character = function(x, y) {

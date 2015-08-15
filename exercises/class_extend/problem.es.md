@@ -1,8 +1,8 @@
-# Introduction
+# Introducción
 
-Now that we are able to create and use classes, lets look at how we can create classes that build on existing functionality.
+Ahora que ya hemos aprendido a crear y utilizar clases, veamos como crear clases que se construyan sobre funcionalidades existentes.
 
-Take this class for example:
+En el siguiente ejemplo:
 
 ```javascript
 class Character {
@@ -17,8 +17,7 @@ class Character {
   }
 }
 ```
-
-it is possible to build on the character class like this:
+sería posible construir una clase así:
 
 ```javascript
 class Monster extends Character {
@@ -28,8 +27,7 @@ class Monster extends Character {
   }
 }
 ```
-
-In this example, the `extends` keyword lets `Monster` inherit(build on, reuse) the methods defined in `Character`. When you use this syntax it is also possible to use `super`. `super` allows to specify whether the function defined in this class should be used or the class it extends from, the "super-class".
+En este ejemplo, la palabra clave `extends` permite a `Monster` heredar (construir en base a, reutilizar) los métodos definidos en `Character`. Utilizando esta sintaxis podemos usar `super`. De esta manera podemos especificar si tenemos que usar la función definida en esta clase o la clase de la cual ha sido extendida; la "super-clase".
 
 ```javascript
 class Monster extends Character {
@@ -44,9 +42,9 @@ class Monster extends Character {
 }
 ```
 
-# Problem
+# Problema
 
-Rewrite the classes that are written below in the `prototype` and `util.inherit` fashion with the new ES6 syntax.
+Refactoriza las clases de abajo escritas utilizando el modo `prototype` y `util.inherit` en la nueva sintaxis ES6.
 
 ```javascript
 var util = require('util');
@@ -85,8 +83,7 @@ Player.prototype.toString = function() {
 };
 
 ```
-
-When you have the file created, use it to make some damage and write the result to the console like this:
+Cuando tengas el archivo creado úsalo para crear algo de "daño" y envía el resultado a la consola así:
 
 ```javascript
 var x = process.argv[2];

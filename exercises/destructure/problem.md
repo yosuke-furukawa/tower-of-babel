@@ -12,7 +12,7 @@ foo = bar;
 bar = tmp;
 ```
 
-With destructuring it it becomes easier like this.
+With destructuring it becomes easier like this.
 
 ```javascript
 var foo = 123;

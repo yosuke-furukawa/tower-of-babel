@@ -1,14 +1,14 @@
-In the last exercise you used `Iterable`s to generate loops. But the Iterable object did require a lot of overhead. With the new `generator` syntax its possible to do the same thing with less effort.
+En el último ejercicio hemos utilizado `Iterables` para generar bucles. Para crearlos nos ha costado bastante esfuerzo. Con la nueva sintaxis basada en el `generador` podremos hacer lo mismo pero de manera más sencilla.
 
-Here is an example of the generator syntax:
+Aquí tenemos un ejemplo con la sintaxis de generador:
 
 ```javascript
 let fibonacci = function*(){
   let pre = 0, cur = 1;
   while (pre < 1000) {
-    // Here we destruct the former state
+    // Aquí desestructuramos el primer estado:
     [pre, cur] = [cur, pre + cur];
-    // and yield (return) each step
+    // y retornamos cada paso meniante yield
     yield pre;
   }
 }();
@@ -17,9 +17,8 @@ for (var n of fibonacci) {
   console.log(n);
 }
 ```
+Aquí la principal diferencia está en la notación de `function*` y en que utilizamos `yield` en lugar de `return`
 
-The difference to other ways is the `function*` notation and that you use `yield` where you would have used `return` before.
+# Ejercicio
 
-# Exercise
-
-Create the same FizzBuzz algorithm as explained in the last exercise but this time using the new `generator` syntax.
+Crea el mismo algoritmo FizzBuzz tal y como se explica en el último ejercicio pero esta vez utilizando la nueva sintaxis de `generador`.

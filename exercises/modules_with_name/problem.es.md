@@ -1,26 +1,24 @@
-Until now it hasn't been possible to split up your code into modules in JavaScript.
+Hasta ahora no ha sido posible dividir tu código Javascript en módulos.
 
-In node.js/io.js it's common to use `commonjs` modules but in the browser you had to use other solutions like require.js or browserify or were forced to create your own global namespaces.
+In NodeJS/io se utilizan de forma frecuente módulos de `commonjs` pero para el navegador web son necesarias soluciones como las que ofrecen `require.js` y `browserify` o nos veíamos obligados a crear nuestro propio *namespace* global.
 
-From ES6  you will be able to use the `export` and `import` keywords that are specially designed for creating modules.
+En ES6 podemos utilizar funcionalidades como `import` y `export` que están especialmente diseñadas para crear este tipo de módulos.
 
-Basically, they look a lot like `commonjs` modules. With `export` you can specify the objects to be exported and instead of `require` you can use `import` to import the object.
+Básicamente funcionan como los módulos de `commonjs`. Mediante `export` podemos especificar los objetos que expondrá nuestra aplicación y en lugar de usar `require` para importarlos lo haremos con `import`.
 
-Using export looks like this:
+Para usar `export` lo haremos así:
 
 ```javascript
 // Message.js
 export const message = 'Hello Babel';
 ```
-
-And to import that module you can use it like this:
+Y para importar un módulo haremos:
 
 ```javascript
 import {message} from './Message';
 console.log(message); // Hello Babel
 ```
-
-Using `common.js` the same module would be written like this:
+Con la sintaxis de `common.js` el mismo módulo se escribiría así:
 
 ```javascript
 exports.message = 'Hello Babel';
@@ -31,11 +29,11 @@ var message = require('./Message').message;
 console.log(message); // Hello Babel
 ```
 
-# Exercise
+# Ejercicio
 
-Rewrite the following module & executable using EcmaScript 6 module:
+Refactoriza el siguiente módulo y su ejecutable utilizando módulos de ECMAScript 6:
+(módulo)
 
-(module)
 ```javascript
 exports.PI = 3.141592;
 
@@ -50,7 +48,8 @@ exports.square = function(x) {
 };
 ```
 
-(executable)
+(ejecutable)
+
 ```javascript
 var arg1 = process.argv[2];
 var arg2 = process.argv[3];
@@ -62,8 +61,7 @@ console.log(PI);
 console.log(sqrt(+arg1));
 console.log(square(+arg2));
 ```
-
-Make sure you pass in both the executable file and the module file to run/verify your solution.
+Asegúrate de que pasas ambos; el archivo ejecutable y el del módulo a ejecutar/verificar de tu solución.
 
 ```
 $ tower-of-babel run|verify <executable file> <module file>

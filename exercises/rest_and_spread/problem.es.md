@@ -1,6 +1,6 @@
-Before ES6, if you had to deal with an variable amount of parameters you would have had to use the `arguments` variable to process more parameters that you defined. But since `arguments` is not an array several methods (like map or reduce) could not be used.
+Anteriormente a ES6, para utilizar una cantidad indeterminada de parámetros no definidos por nosotros teniamos que hacerlo mediante la variable `arguments`. Como esta variable no era un Array no podíamos aplicarle algunos de los métodos como `map` o `reduce`.
 
-Since ES6 you can use `...` instead of `arguments` for the variable parameters. With this you can access the remaining parameters through an array, not an object.
+A partir de ahora con ES6 podemos utilizar `...` como parámetro en lugar de hacerlo con la variable `arguments`. De esta forma podremos acceder a resto de parámetros mediante un Array, no de un Objeto.
 
 ```javascript
 var sum = function(...args){
@@ -10,8 +10,7 @@ var sum = function(...args){
 
 console.log(sum(1,2,3)); // 6
 ```
-
-It is also now possible to call a method using a so-called `spread call` to pass arrays to a method:
+También es posible llamar a un método mediante el ya conocido operador de propagación para pasar Arrays a un método:
 
 ```javascript
 var sum = function(...args){
@@ -25,9 +24,9 @@ console.log(sum(...array)); // 10
 
 ```
 
-# Exercise
+# Ejercicio
 
-Calculate the average of all the numbers passed in using command line arguments using the `...` syntax.
+Calcula el promedio de todos los números pasados usando los argumentos de línea de comandos mediante la sintaxis del operador de propagación `...`.
 
 ```javascript
 var rawArgs = process.argv.slice(2);
@@ -40,7 +39,7 @@ rawArgs.forEach(val => {
   });
 });
 
-// write a function called `avg` here that calculates the average.
+// A continuación escribe una función llamada `avg` que calcule el promedio.
 
 console.log(avg(...args));
 ```

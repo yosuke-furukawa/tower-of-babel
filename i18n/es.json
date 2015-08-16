@@ -12,6 +12,6 @@
     "GENERATOR":              "GENERADOR",
     "DESTRUCTURE":            "DESESTRUCTURACIÓN",
     "ARROW FUNCTION":         "FUNCIONES FLECHA",
-    "REST AND SPREAD":        "REST Y SPREAD"
+    "REST AND SPREAD":        "REST Y PROPAGACIÓN"
   }
 }

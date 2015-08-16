@@ -1,6 +1,6 @@
-The former exercise explained the module system but there is another way to use `export` and that is `export default`.
+En el ejercicio anterior vimos como funciona el sistema de módulos. Ahora veremos como utilizarlos de otra forma mediante `export default`.
 
-Some explanation about the difference: this module uses `export` like in the former exercise
+Nota sobre las diferencias: este módulo utiliza `export` del mismo modo que en el ejercicio anterior.
 
 ```javascript
 // Message.js
@@ -13,15 +13,13 @@ export const obj = {
   version: version
 };
 ```
-
-the object that this module exports can be imported using the name as in this example;
+el Objeto que exporta este módulo puede ser importado mediante su nombre:
 
 ```javascript
 import {obj} from './Message';
 console.log(obj.greeting + ' ' + obj.name + ' ' + obj.version); // Hello Babel v5.0
 ```
-
-You can achieve the same thing by using `export default`:
+Podemos obtener el mismo resultado usando `export default`:
 
 ```javascript
 // Message.js
@@ -35,7 +33,7 @@ export default {
 };
 ```
 
-The import then changes a little
+La forma de importar entonces varía ligeramente:
 
 ```javascript
 import Message from './Message';
@@ -43,9 +41,9 @@ console.log(
   Message.greeting + ' ' + Message.name + ' ' + Message.version); //Hello Babel v5.0
 ```
 
-The difference should be obvious but lets make it clear: When you use `export default` you do not need to use the curly braces `{...}` and you don't need to know the name of the exported method.
+La diferencia es bastante evidente. Como nota aclaratoria: Si usamos `export default` no necesitamos añadir las llaves `{...}` y no necesitas saber el nombre del método exportado.
 
-Written in `common.js` it would look like this:
+Con la sintaxis de `common.js` quedaría así:
 
 ```javascript
 const greeting = 'Hello';
@@ -57,12 +55,11 @@ module.exports = {
   version: version
 };
 ```
+De modo que puedes usar `export default` tal y como lo harías usando `module.exports` en Node.js.
 
-So, you can use `export default` just like you would use `module.exports` in Node.js.
+# Ejercicio
 
-# Exercise
-
-Rewrite the methods that use the regular export here to the `export default` syntax.
+Refactoriza los métodos que usan el `export` regular por la sintaxis `export default`.
 
 ```javascript
 // Math.js
@@ -89,15 +86,14 @@ console.log(PI);
 console.log(sqrt(+arg1));
 console.log(square(+arg2));
 ```
-
-Make sure you pass in both the executable file and the module file to run/verify your solution.
+Asegúrate de que pasas ambos; el archivo ejecutable y el del módulo a ejecutar/verificar de tu solución.
 
 ```
 $ tower-of-babel run|verify <executable file> <module file>
 
-# Example of running the converted modules
+# Ejemplo de como ejecutar los módulos convertidos
 $ tower-of-babel run Main.js Math.js
 
-# Example of verifying the converted modules
+# Ejemplo para verificar los módulos convertidos
 $ tower-of-babel verify Main.js Math.js
 ```

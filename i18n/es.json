@@ -1,0 +1,17 @@
+{
+  "subtitle": "Aprende funcionalidades ES6 usando babel",
+  "exercise": {
+    "BABEL SETUP":            "CONFIGURA BABEL",
+    "CLASS":                  "CLASS",
+    "CLASS EXTEND":           "EXTENDIENDO CLASS",
+    "MODULES WITH NAME":      "MÓDULOS CON NOMBRE",
+    "MODULES DEFAULT EXPORT": "EXPORTAR MÓDULOS POR DEFECTO",
+    "BLOCK SCOPE":            "ÁMBITO DE BLOQUE",
+    "COMPUTED PROPERTY":      "PROPIEDAD COMPUTADA",
+    "ITERATOR FOR OF":        "ITERADOR FOR OF",
+    "GENERATOR":              "GENERADOR",
+    "DESTRUCTURE":            "DESESTRUCTURACIÓN",
+    "ARROW FUNCTION":         "FUNCIONES FLECHA",
+    "REST AND SPREAD":        "REST Y PROPAGACIÓN"
+  }
+}

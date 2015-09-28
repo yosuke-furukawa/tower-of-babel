@@ -4,8 +4,7 @@ A partir de ahora con ES6 podemos utilizar `...` como parámetro en lugar de hac
 
 ```javascript
 var sum = function(...args){
-  let sum = args.reduce( (sum, n) => sum + n );
-  return sum;
+  return args.reduce( (sum, n) => sum + n );
 };
 
 console.log(sum(1,2,3)); // 6
@@ -14,8 +13,7 @@ También es posible llamar a un método mediante el ya conocido operador de prop
 
 ```javascript
 var sum = function(...args){
-  let sum = args.reduce( (sum, n) => sum + n );
-  return sum;
+  return args.reduce( (sum, n) => sum + n );
 };
 
 var array = [1, 2, 3, 4];

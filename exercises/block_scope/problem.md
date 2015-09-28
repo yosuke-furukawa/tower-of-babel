@@ -40,7 +40,7 @@ if (a === 5) {
   var|let|const c = 4;
   console.log(c);  // 4
 
-  // This variable `b` should only be valid in this block.
+  // This variable `b` should only be valid in this block and should not be reassignable.
   var|let|const b = 8;
   console.log(b); // 8
 }

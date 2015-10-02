@@ -4,8 +4,7 @@ Since ES6 you can use `...` instead of `arguments` for the variable parameters. 
 
 ```javascript
 var sum = function(...args){
-  let sum = args.reduce( (sum, n) => sum + n );
-  return sum;
+  return args.reduce( (sum, n) => sum + n );
 };
 
 console.log(sum(1,2,3)); // 6
@@ -15,8 +14,7 @@ It is also now possible to call a method using a so-called `spread call` to pass
 
 ```javascript
 var sum = function(...args){
-  let sum = args.reduce( (sum, n) => sum + n );
-  return sum;
+  return args.reduce( (sum, n) => sum + n );
 };
 
 var array = [1, 2, 3, 4];

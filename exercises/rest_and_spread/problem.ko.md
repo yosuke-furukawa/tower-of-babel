@@ -5,8 +5,7 @@ ES6에서는 이 `arguments`를 사용하지 않고도 인수에 `...`를 붙여
 
 ```javascript
 var sum = function(...args){
-  let sum = args.reduce( (sum, n) => sum + n );
-  return sum;
+  return args.reduce( (sum, n) => sum + n );
 };
 
 console.log(sum(1,2,3)); // 6
@@ -17,8 +16,7 @@ console.log(sum(1,2,3)); // 6
 ```javascript
 
 var sum = function(...args){
-  let sum = args.reduce( (sum, n) => sum + n );
-  return sum;
+  return args.reduce( (sum, n) => sum + n );
 };
 
 var array = [1, 2, 3, 4];

@@ -5,8 +5,7 @@ ES6からはこの `arguments` を使わなくても引数に `...` を付ける
 
 ```javascript
 var sum = function(...args){
-  let sum = args.reduce( (sum, n) => sum + n );
-  return sum;
+  return args.reduce( (sum, n) => sum + n );
 };
 
 console.log(sum(1,2,3)); // 6
@@ -17,8 +16,7 @@ console.log(sum(1,2,3)); // 6
 ```javascript
 
 var sum = function(...args){
-  let sum = args.reduce( (sum, n) => sum + n );
-  return sum;
+  return args.reduce( (sum, n) => sum + n );
 };
 
 var array = [1, 2, 3, 4];

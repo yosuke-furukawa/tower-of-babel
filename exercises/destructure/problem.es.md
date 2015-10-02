@@ -18,7 +18,7 @@ var foo = 123;
 var bar = 456;
 
 // swapping of the value
-var [bar, foo] = [foo, bar];
+[bar, foo] = [foo, bar];
 ```
 Podemos incluso acceder a elementos que son hijos de un Array.
 

@@ -19,7 +19,7 @@ var hoge = 123;
 var fuga = 456;
 
 // 値をswapする
-var [fuga, hoge] = [hoge, fuga];
+[fuga, hoge] = [hoge, fuga];
 ```
 
 これだけです、配列に２つの値を入れて左辺で交換するだけで実現できます。

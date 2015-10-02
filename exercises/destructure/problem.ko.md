@@ -19,7 +19,7 @@ var hoge = 123;
 var fuga = 456;
 
 // 값을 스왑
-var [fuga, hoge] = [hoge, fuga];
+[fuga, hoge] = [hoge, fuga];
 ```
 
 이게 끝입니다. 배열에 2개의 값을 넣어 왼쪽의 변수를 교환하는 것만으로 구현 가능합니다.

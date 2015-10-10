@@ -41,5 +41,5 @@ For example, in case of ["Hello", "Arrow", "Function"] should result in "HAF". H
 
 ```shell
 $ babel-node program.js Hi this is yosuke
-Htiy
+HTIY
 ```

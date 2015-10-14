@@ -1,6 +1,6 @@
-Two new keywords called `let` and `const` allow the definition of variables in a block scope. Traditional variables defined with `var` have always been defined for the whole function scope. The restriction of a block scope means that `let`/`const` are defined to be used within curly braces `{ ... }`.
+Le due nuove parole chiave `let` e `const` permettono la definizione di variabili con visibilità in un blocco. Le variabili tradizionali definite con `var` sono state sempre visibili all'interno dell'intera funzione. La restrizione della visibilità ad un blocco significa che le variabili definite con `let`/`const` sono visibili soltanto all'interno delle parentesi graffe `{ ... }`.
 
-Variables defined with `let` are changeable but `const` doesn't allow reassignments. `const` is much like Java's `final` keyword.
+Le variabili definite con `let` sono mutevoli, ma `const` non permette ulteriori assegnamenti. `const` somiglia molto alla parola chiave `final` di Java.
 
 ```javascript
 // block.js
@@ -10,37 +10,37 @@ Variables defined with `let` are changeable but `const` doesn't allow reassignme
   const tmp = a;
   a = b;
   b = tmp;
-  // tmp = 30; Can't do that, will result in a SyntaxError
+  // tmp = 30; Non è consentito, risulterebbe in un errore SyntaxError
 }
 
-// a = 20、a is defined with `var` so it is accessible outside of the scope
+// a = 20、a è definito con `var` quindi è accessibile al di fuori del blocco
 console.log(a);
-// variables defined with `let` are not available. This will result in: ReferenceError b is not defined
+// le variabili definite con `let` non sono disponibili. Questa istruzione produrrà un errore: ReferenceError b is not defined
 console.log(b);
-// Same goes for const: tmp is not defined
+// Stesso discorso per const: tmp is not defined
 console.log(tmp);
 ```
 
-Using `let` and `const` is recommended because its harder to leak variables to outer scopes.
+Usare `let` e `const` è consigliato perché rende più difficile rendere le variabili visibili all'esterno del blocco in cui vengono usate.
 
-# Exercise
+# Esercizio
 
-Modify this file by choosing either `var`, `let` or `const` to make the code behave as described in the comments
+Modifica questo file scegliendo tra `var`, `let` e `const` per fare in modo che il codice si comporti come richiesto dai commenti
 
 ```javascript
 'use strict';
-// This variable `a` should be accessible outside of the block scope.
+// Questa variabile `a` deve essere accessibile al di fuori del blocco.
 var|let|const a = 5;
 
-// This variable `b` should not be reassignable.
+// Questa variabile `b` non deve potere essere riassegnata.
 var|let|const b = process.argv[2];
 
 if (a === 5) {
-  // This variable `c` should only be valid in this block.
+  // Questa variabile `c` deve essere valida soltanto all'interno di questo blocco.
   var|let|const c = 4;
   console.log(c);  // 4
 
-  // This variable `b` should only be valid in this block and should not be reassignable.
+  // Questa variabile `b` deve essere valida soltanto all'interno di questo blocco e non deve potere essere riassegnata.
   var|let|const b = 8;
   console.log(b); // 8
 }
@@ -48,10 +48,10 @@ if (a === 5) {
 console.log(a); // 5
 console.log(b);
 try {
-  // Trying to change the value of `c`
+  // Proviamo a cambiare il valore di `c`
   c = 1000;
 } catch (e) {
-  // but an `c is not defined` error should occur.
+  // ma si deve verificare un errore `c is not defined`.
   console.log(e);
 }
 ```

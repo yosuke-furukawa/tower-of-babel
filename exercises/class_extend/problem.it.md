@@ -1,8 +1,8 @@
-# Introduction
+# Introduzione
 
-Now that we are able to create and use classes, lets look at how we can create classes that build on existing functionality.
+Adesso che possiamo creare e usare le classi, vediamo come è possibile creare classi che riutilizzano funzionalità esistente.
 
-Take this class for example:
+Prediamo questa classe come esempio:
 
 ```javascript
 class Character {
@@ -18,7 +18,7 @@ class Character {
 }
 ```
 
-it is possible to build on the character class like this:
+è possibile costruire a partire dalla classe `Character` come segue:
 
 ```javascript
 class Monster extends Character {
@@ -29,7 +29,7 @@ class Monster extends Character {
 }
 ```
 
-In this example, the `extends` keyword lets `Monster` inherit(build on, reuse) the methods defined in `Character`. When you use this syntax it is also possible to use `super`. `super` allows to specify whether the function defined in this class should be used or the class it extends from, the "super-class".
+In questo esempio, la parola chiave `extends` permette a `Monster` di ereditare (riutilizzare, basarsi su) i metodi definiti in `Character`. Quando usi questa sintassi puoi anche usare la parola chiave `super`. `super` ti permette di specificare se vada usata la funzione definita in questa classe, oppure la classe che viene da essa estesa, chiamata "superclasse".
 
 ```javascript
 class Monster extends Character {
@@ -44,9 +44,9 @@ class Monster extends Character {
 }
 ```
 
-# Problem
+# Esercizio
 
-Rewrite the classes that are written below in the `prototype` and `util.inherit` fashion with the new ES6 syntax.
+Riscrivi le classi scritte di seguito usando `prototype` e `util.inherit` usando la nuova sintassi ES6.
 
 ```javascript
 var util = require('util');
@@ -65,7 +65,7 @@ Character.prototype.getHealth = function() {
 };
 
 Character.prototype.toString = function() {
-  return "x: " + this.x + " y: " + this.y + " health: " + this.getHealth();
+  return "x: " + this.x + " y: " + this.y + " salute: " + this.getHealth();
 };
 
 var Player = function(x, y, name) {
@@ -81,12 +81,12 @@ Player.prototype.move = function(dx, dy){
 };
 
 Player.prototype.toString = function() {
-  return "name: " + this.name + " " + Player.super_.prototype.toString.call(this);
+  return "nome: " + this.name + " " + Player.super_.prototype.toString.call(this);
 };
 
 ```
 
-When you have the file created, use it to make some damage and write the result to the console like this:
+Non appena hai creato il file, usalo per arrecare del danno al personaggio e scrivi il risultato sulla console come segue:
 
 ```javascript
 var x = process.argv[2];

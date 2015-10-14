@@ -1,6 +1,6 @@
-In ES6 the way to access and define object literals has been improved. It is now possible to use expressions as property names.
+In ES6 la maniera di definire e accedere ad oggetti letterali è stata migliorata. È possibile ora usare espressioni come nomi di proprietà.
 
-Before you had to define dynamic properties of objects like this:
+Prima dovevi definire proprietà dinamiche degli oggetti come segue:
 
 ```javascript
 var prop = "foo";
@@ -9,7 +9,7 @@ var obj = {};
 obj[prop] = "bar";
 ```
 
-can now be written like this in ES6:
+adesso puoi scrivere come segue in ES6:
 
 ```javascript
 var prop = "foo";
@@ -18,22 +18,22 @@ var obj = {
 };
 ```
 
-This is called a `Computed Property`.
+Questa viene chiamata una `Computed Property`.
 
-The content of `[]` can also be a function:
+L'espressione racchiusa tra `[]` può essere anche una funzione:
 
 ```javascript
 var obj = {
-  // using an inline function
+  // usando una funzione in linea o lambda, con la notazione freccia
   [(()=>"bar" + "baz")()]: "foo"
 };
 ```
 
-In this case the key the string returned by the function. With the new `Computed Property` syntax you can express dynamic properties without using temporary variables.
+In questo caso la stringa usata come chiave viene restituita dalla funzione. Con la nuova sintassi `Computed Property` puoi esprimere proprietà dinamiche senza usare variabili temporanee.
 
-# Exercise
+# Esercizio
 
-Rewrite the following code using the new `Computed Property` method:
+Riscrivi il codice seguente usando la nuova sintassi `Computed Property`:
 
 ```javascript
 var evenOrOdd = +process.argv[2];
@@ -45,4 +45,4 @@ obj[sum] = sum;
 console.log(obj);
 ```
 
-Try to solve it without any temporary variable.
+Prova a risolverlo senza l'uso di variabili temporanee.

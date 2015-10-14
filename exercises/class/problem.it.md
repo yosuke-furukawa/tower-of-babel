@@ -66,7 +66,7 @@ Character.prototype.getHealth = function() {
 };
 
 Character.prototype.toString = function() {
-  return "x: " + this.x + " y: " + this.y + " health: " + this.getHealth();
+  return "x: " + this.x + " y: " + this.y + " salute: " + this.getHealth();
 };
 ```
 

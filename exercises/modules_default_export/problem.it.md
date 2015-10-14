@@ -1,10 +1,10 @@
-The former exercise explained the module system but there is another way to use `export` and that is `export default`.
+L'esercizio precedente spiegava il sistema dei moduli, ma esiste un'altra maniera di usare `export`, ovvero `export default`.
 
-Some explanation about the difference: this module uses `export` like in the former exercise
+Una spiegazione sulla differenza: questo modulo usa `export` come nell'esercizio precedente
 
 ```javascript
 // Message.js
-const greeting = 'Hello';
+const greeting = 'Ciao';
 const name = 'Babel';
 const version = 'v5.0';
 export const obj = {
@@ -14,18 +14,18 @@ export const obj = {
 };
 ```
 
-the object that this module exports can be imported using the name as in this example;
+l'oggetto esportato da questo modulo può essere importato usando il nome come in questo esempio;
 
 ```javascript
 import {obj} from './Message';
-console.log(obj.greeting + ' ' + obj.name + ' ' + obj.version); // Hello Babel v5.0
+console.log(obj.greeting + ' ' + obj.name + ' ' + obj.version); // Ciao Babel v5.0
 ```
 
-You can achieve the same thing by using `export default`:
+Puoi ottenere lo stesso risultato usando `export default`:
 
 ```javascript
 // Message.js
-const greeting = 'Hello';
+const greeting = 'Ciao';
 const name = 'Babel';
 const version = 'v5.0';
 export default {
@@ -35,20 +35,20 @@ export default {
 };
 ```
 
-The import then changes a little
+L'importazione cambia leggermente
 
 ```javascript
 import Message from './Message';
 console.log(
-  Message.greeting + ' ' + Message.name + ' ' + Message.version); //Hello Babel v5.0
+  Message.greeting + ' ' + Message.name + ' ' + Message.version); //Ciao Babel v5.0
 ```
 
-The difference should be obvious but lets make it clear: When you use `export default` you do not need to use the curly braces `{...}` and you don't need to know the name of the exported method.
+La differenza dovrebbe essere ovvia, ma rivediamola per maggiore chiarezza: quando usi `export default` non hai bisogno di usare le parentesi graffe `{...}` e non devi necessariamente usare il nome delle proprietà esportate.
 
-Written in `common.js` it would look like this:
+Scritto in formato `common.js` sarebbe simile a quanto segue:
 
 ```javascript
-const greeting = 'Hello';
+const greeting = 'Ciao';
 const name = 'Babel';
 const version = 'v5.0';
 module.exports = {
@@ -58,11 +58,11 @@ module.exports = {
 };
 ```
 
-So, you can use `export default` just like you would use `module.exports` in Node.js.
+Quindi puoi usare `export default` per ottenere lo stesso risultato di `module.exports` in Node.js.
 
-# Exercise
+# Esercizio
 
-Rewrite the methods that use the regular export here to the `export default` syntax.
+Riscrivi i metodi seguenti che usano la sintassi `export` regolare usando la sintassi `export default`.
 
 ```javascript
 // Math.js
@@ -90,14 +90,14 @@ console.log(sqrt(+arg1));
 console.log(square(+arg2));
 ```
 
-Make sure you pass in both the executable file and the module file to run/verify your solution.
+Assicurati di passare sia il file eseguibile che il file del modulo per eseguire o verificare la tua soluzione.
 
 ```
-$ tower-of-babel run|verify <executable file> <module file>
+$ tower-of-babel run|verify <file eseguibile> <file del modulo>
 
-# Example of running the converted modules
+# Esempio di esecuzione dei moduli convertiti
 $ tower-of-babel run Main.js Math.js
 
-# Example of verifying the converted modules
+# Esempio di verifica dei moduli convertiti
 $ tower-of-babel verify Main.js Math.js
 ```

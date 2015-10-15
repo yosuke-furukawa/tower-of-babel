@@ -1,39 +1,39 @@
-Until now it hasn't been possible to split up your code into modules in JavaScript.
+Finora non è stato possibile suddividere il tuo codice in moduli in JavaScript.
 
-In node.js/io.js it's common to use `commonjs` modules but in the browser you had to use other solutions like require.js or browserify or were forced to create your own global namespaces.
+In node.js/io.js è comune utilizzare moduli `commonjs` ma nel browser hai dovuto ricorrere ad altre soluzioni come require.js o browserify o sei stato spinto a creare il tuo namespace globale.
 
-From ES6  you will be able to use the `export` and `import` keywords that are specially designed for creating modules.
+Con ES6 sarai in grado di usare le parole chiave `export` e `import` che sono state concepite espressamente per creare moduli.
 
-Basically, they look a lot like `commonjs` modules. With `export` you can specify the objects to be exported and instead of `require` you can use `import` to import the object.
+In sostanza, si tratta di moduli molto simili a quelli di `commonjs`. Con `export` puoi specificare gli oggetti da esportare, e anziché con `require`, puoi importare gli oggetti con `import`.
 
-Using export looks like this:
+`export` si usa come segue:
 
 ```javascript
 // Message.js
-export const message = 'Hello Babel';
+export const message = 'Ciao Babel';
 ```
 
-And to import that module you can use it like this:
+E per importare il modulo precedente puoi scrivere come segue:
 
 ```javascript
 import {message} from './Message';
-console.log(message); // Hello Babel
+console.log(message); // Ciao Babel
 ```
 
-Using `common.js` the same module would be written like this:
+Usando `common.js`, lo stesso modulo sarebbe scritto come segue:
 
 ```javascript
-exports.message = 'Hello Babel';
+exports.message = 'Ciao Babel';
 ```
 
 ```javascript
 var message = require('./Message').message;
-console.log(message); // Hello Babel
+console.log(message); // Ciao Babel
 ```
 
-# Exercise
+# Esercizio
 
-Rewrite the following module & executable using EcmaScript 6 module:
+Riscrivi il modulo e il codice eseguibile seguenti usando i moduli di EcmaScript 6:
 
 (module)
 ```javascript
@@ -63,14 +63,14 @@ console.log(sqrt(+arg1));
 console.log(square(+arg2));
 ```
 
-Make sure you pass in both the executable file and the module file to run/verify your solution.
+Assicurati di passare sia il file eseguibile che il file del modulo per eseguire o verificare la tua soluzione.
 
 ```
-$ tower-of-babel run|verify <executable file> <module file>
+$ tower-of-babel run|verify <file eseguibile> <file del modulo>
 
-# Example of running the converted modules
+# Esempio di esecuzione dei moduli convertiti
 $ tower-of-babel run Main.js Math.js
 
-# Example of verifying the converted modules
+# Esempio di verifica dei moduli convertiti
 $ tower-of-babel verify Main.js Math.js
 ```

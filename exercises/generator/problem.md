@@ -1,4 +1,4 @@
-In the last exercise you used `Iterable`s to generate loops. But the Iterable object did require a lot of overhead. With the new `generator` syntax its possible to do the same thing with less effort.
+In the last exercise you used `Iterable`s to generate loops. But the Iterable object did require a lot of overhead. With the new `generator` syntax it's possible to do the same thing with less effort.
 
 Here is an example of the generator syntax:
 

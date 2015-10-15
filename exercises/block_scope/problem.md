@@ -21,7 +21,7 @@ console.log(b);
 console.log(tmp);
 ```
 
-Using `let` and `const` is recommended because its harder to leak variables to outer scopes.
+Using `let` and `const` is recommended because it's harder to leak variables to outer scopes.
 
 # Exercise
 

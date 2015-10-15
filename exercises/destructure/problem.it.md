@@ -1,4 +1,4 @@
-Questa nuova sintassi è simile alla destrutturazione di Clojure. Rende piu facile accedere alle proprieta degli array e degli oggetti.
+Questa nuova sintassi è simile alla destrutturazione di Clojure. Rende più facile accedere alle proprietà degli array e degli oggetti.
 
 Esaminiamo la sintassi con un piccolo esempio. L'esempio più comune è lo scambio dei valori tra due variabili:
 

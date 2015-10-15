@@ -1,6 +1,6 @@
 
 # Introduzione
-Questo è il primo esercizio per imparare ES6 usando babel.
+Questo è il primo esercizio per imparare ECMAScript 6 (in breve, ES6) usando babel.
 
 Anche con la potenza dell'ultima versione di node.js, non è possibile usare al momento tutte le caratteristiche di ES6.
 
@@ -25,10 +25,10 @@ Una volta salvato, potrai eseguire il programma nel modo seguente:
 $ babel-node program.js
 ```
 
-Prova ad eseguirlo e verifica che produce `Ciao Babel`.
+Prova ad eseguirlo e verifica che produca `Ciao Babel`.
 
 # Esercizio
-Crea un programma javascript che prende il primo argomento dalla riga di comando e lo scrive
+Crea un programma javascript che prenda il primo argomento dalla riga di comando e lo scriva
 immediatamente dopo la stringa `"Ciao "` usando le stringhe modello di ES6.
 
 # Suggerimenti
@@ -54,4 +54,4 @@ var a = 1;
 console.log(`${a}`);
 ```
 
-Leggi maggiori dettagli sulle stringhe modello qui: http://updates.html5rocks.com/2015/01/ES6-Template-Strings
+Puoi trovare maggiori dettagli sulle stringhe modello all'indirizzo http://updates.html5rocks.com/2015/01/ES6-Template-Strings

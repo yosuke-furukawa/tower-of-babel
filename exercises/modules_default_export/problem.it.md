@@ -45,7 +45,7 @@ console.log(
 
 La differenza dovrebbe essere ovvia, ma rivediamola per maggiore chiarezza: quando usi `export default` non hai bisogno di usare le parentesi graffe `{...}` e non devi necessariamente usare il nome delle proprietà esportate.
 
-Scritto in formato `common.js` sarebbe simile a quanto segue:
+Scritto in formato `commonjs` sarebbe simile a quanto segue:
 
 ```javascript
 const greeting = 'Ciao';

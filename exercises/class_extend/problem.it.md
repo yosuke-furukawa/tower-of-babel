@@ -46,7 +46,7 @@ class Monster extends Character {
 
 # Esercizio
 
-Riscrivi le classi scritte di seguito usando `prototype` e `util.inherit` usando la nuova sintassi ES6.
+Riscrivi le classi scritte di seguito tramite `prototype` e `util.inherit` usando la nuova sintassi ES6.
 
 ```javascript
 var util = require('util');

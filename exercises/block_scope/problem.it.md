@@ -1,4 +1,4 @@
-Le due nuove parole chiave `let` e `const` permettono la definizione di variabili con visibilità in un blocco. Le variabili tradizionali definite con `var` sono state sempre visibili all'interno dell'intera funzione. La restrizione della visibilità ad un blocco significa che le variabili definite con `let`/`const` sono visibili soltanto all'interno delle parentesi graffe `{ ... }`.
+Le due nuove parole chiave `let` e `const` permettono la definizione di variabili con visibilità limitata ad un blocco. Le variabili tradizionali definite con `var` sono state sempre visibili all'interno dell'intera funzione. La restrizione della visibilità ad un blocco significa che le variabili definite con `let`/`const` sono visibili soltanto all'interno delle parentesi graffe `{ ... }`.
 
 Le variabili definite con `let` sono mutevoli, ma `const` non permette ulteriori assegnamenti. `const` somiglia molto alla parola chiave `final` di Java.
 
@@ -10,10 +10,10 @@ Le variabili definite con `let` sono mutevoli, ma `const` non permette ulteriori
   const tmp = a;
   a = b;
   b = tmp;
-  // tmp = 30; Non è consentito, risulterebbe in un errore SyntaxError
+  // tmp = 30; Non è permesso, risulterebbe in un errore SyntaxError
 }
 
-// a = 20、a è definito con `var` quindi è accessibile al di fuori del blocco
+// a = 20; a è definito con `var` quindi è accessibile al di fuori del blocco
 console.log(a);
 // le variabili definite con `let` non sono disponibili. Questa istruzione produrrà un errore: ReferenceError b is not defined
 console.log(b);

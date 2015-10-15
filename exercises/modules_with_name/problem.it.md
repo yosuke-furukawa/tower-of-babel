@@ -33,7 +33,7 @@ console.log(message); // Ciao Babel
 
 # Esercizio
 
-Riscrivi il modulo e il codice eseguibile seguenti usando i moduli di EcmaScript 6:
+Riscrivi il modulo e il codice eseguibile seguenti usando i moduli di ES6:
 
 (module)
 ```javascript

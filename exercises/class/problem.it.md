@@ -20,9 +20,7 @@ alice.setName('bob');
 alice.getName(); // bob
 ```
 
-Questa maniera di scrivere una classe non è del tutto impraticabile, ma ha diveri
-svantaggi: devi aggiungere `prototype` per ogni definizione di metodo e la funzione
-`function` così definita diventa automaticamente il costruttore del tipo.
+Questa maniera di scrivere una classe non è del tutto impraticabile, ma ha diversi svantaggi: devi aggiungere `prototype` per ogni definizione di metodo e la funzione `function` così definita diventa automaticamente il costruttore del tipo.
 Devi conoscere questi "trucchi" per gestire correttamente le classi. ES6 aggiunge una nuova sintassi per definire le classi.
 
 La stessa classe vista prima, scritta con la nuova sintassi ES6, appare come segue:

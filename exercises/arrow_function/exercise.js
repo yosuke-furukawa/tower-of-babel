@@ -1,17 +1,18 @@
 "use strict";
 
-var exercise = require('workshopper-exercise')();
-var filecheck = require('workshopper-exercise/filecheck');
-var execute = require('workshopper-exercise/execute');
-var comparestdout = require('workshopper-exercise/comparestdout');
-var babelProcessor = require('../babel-processor');
+import exercise       from 'workshopper-exercise';
+import filecheck      from 'workshopper-exercise/filecheck';
+import execute        from 'workshopper-exercise/execute';
+import comparestdout  from 'workshopper-exercise/comparestdout';
+import babelProcessor from '../babel-processor';
 
-module.exports = comparestdout(execute(babelProcessor(filecheck(exercise))));
+var obj = comparestdout(execute(babelProcessor(filecheck(exercise()))));
+
 var names = [
   "Hello", "Babel", "Arrow", "Function", "Sebastian", "Mckenzie", "Yosuke"
 ];
 
-module.exports.addSetup(function(mode, cb) {
+obj.addSetup(function(mode, cb) {
   // Fisher-Yates
   var i = names.length;
   while(i) {
@@ -25,3 +26,4 @@ module.exports.addSetup(function(mode, cb) {
   process.nextTick(cb);
 });
 
+export default obj;

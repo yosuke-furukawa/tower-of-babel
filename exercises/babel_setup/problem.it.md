@@ -7,7 +7,7 @@ Anche con la potenza dell'ultima versione di node.js, non è possibile usare al 
 Per abilitare la nuova sintassi esiste un pacchetto aggiuntivo chiamato `babel` che puoi installare usando npm:
 
 ```shell
-$ npm install babel -g
+$ npm install babel-cli -g
 ```
 
 Una volta completato questo passo, saranno disponibili due nuovi comandi: `babel` e `babel-node`.

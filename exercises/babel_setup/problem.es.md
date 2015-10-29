@@ -7,7 +7,7 @@ A pesar de la potencia de la última versión de node.js, todavía no podemos us
 Para poder hacerlo, necesitamos instalar un paquete adicional llamado `babel` haciendo lo siguiente:
 
 ```shell
-$ npm install babel -g
+$ npm install babel-cli -g
 ```
 
 Ona vez instalado, tendrás disponibles dos nuevos comandos: `babel` y `babel-node`.

@@ -4,7 +4,7 @@ ES6의 구문은 현시점에서 node.js를 사용해도 모든 기능을 사용
 여기에, 일단 ES6의 문법을 사용하기 위해, `babel` 바벨을 설치합니다.
 
 ```shell
-$ npm install babel -g
+$ npm install babel-cli -g
 ```
 
 이렇게 하면, `babel`과 `babel-node`의 두 개의 커맨드를 사용할 수 있습니다.

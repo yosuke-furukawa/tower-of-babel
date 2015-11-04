@@ -7,7 +7,7 @@ Even with the power of the latest version of node.js, it isn't possible right no
 To enable a lot of the new grammar, there is an additional package called `babel` which you can install using:
 
 ```shell
-$ npm install babel -g
+$ npm install babel-cli -g
 ```
 
 Once you have done that, two new commands become available: `babel` and `babel-node`.

@@ -7,7 +7,7 @@ Même en utilisant la puissance de la toute dernière version de node.js, il n'e
 Pour utiliser cette nouvelle grammaire, il existe un package additionnel appelé `babel` que vous pouvez installer de la manière suivante :
 
 ```shell
-$ npm install babel -g
+$ npm install babel-cli -g
 ```
 
 Une fois ceci fait, deux nouvelles commandes deviennent accessibles : `babel` et `babel-node`.

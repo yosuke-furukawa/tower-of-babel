@@ -6,7 +6,7 @@ Vamos a examinar la sintaxis con un ejemplo: El más común es el de intercambia
 var foo = 123;
 var bar = 456;
 
-// swapping of the value
+// intercambio de valor de las variables
 var tmp = foo;
 foo = bar;
 bar = tmp;
@@ -17,7 +17,7 @@ Con el desestructurado resulta así de fácil:
 var foo = 123;
 var bar = 456;
 
-// swapping of the value
+// intercambio de valor de las variables
 [bar, foo] = [foo, bar];
 ```
 Podemos incluso acceder a elementos que son hijos de un Array.
@@ -26,7 +26,7 @@ Podemos incluso acceder a elementos que son hijos de un Array.
 var [a, [b], [c]] = ['hello', [', '], ['world']];
 
 console.log(a + b + c);// hello, world
-// the value of a is "hello", b is ", " and c is "world"
+// el valor de a es "hello", b es ", " y c es "world"
 ```
 También podemos usarlo para acceder a las propiedades de los objetos.
 

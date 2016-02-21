@@ -13,14 +13,14 @@ setTimeout(()=>{console.log('Test');}, 100);
 ```
 
 ```javascript
-// (x) => {} becomes a function
-// You would have needed to write like this before: var square = function(x) { return x * x; };
+// (x) => {} se vuelve una funcion
+// Anteriormente tendrias que haberlo escrito asi: var square = function(x) { return x * x; };
 var square = (x) => {
   return x * x;
 };
 console.log(square(4)); //16
 
-// Without braces it is even possible to ommit the return statement
+// Sin las llaves es posible omitir el return
 var square2 = x => x * x;
 console.log(square2(4)); //16
 ```
@@ -31,8 +31,8 @@ Procesa las variables que se pasan mediante `process.argv` y retorna la primera 
 
 ```javascript
 var inputs = process.argv.slice(2);
-var result = inputs.map(/* Your code here, using an arrow function */)
-                   .reduce(/* Your code here, using an arrow function */);
+var result = inputs.map(/* Tu codigo aqui, usando una funcion flecha */)
+                   .reduce(/* Tu codigo aqui, usando una funcion flecha */);
 console.log(result);
 ```
 

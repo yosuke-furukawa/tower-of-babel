@@ -10,10 +10,10 @@ Para poder hacerlo, necesitamos instalar un paquete adicional llamado `babel` ha
 $ npm install babel-cli -g
 ```
 
-Ona vez instalado, tendrás disponibles dos nuevos comandos: `babel` y `babel-node`.
+Una vez instalado, tendrás disponibles dos nuevos comandos: `babel` y `babel-node`.
 Empezaremos usando `babel-node`.
 
-Crea un archivo llamado `program.js` que contanga:
+Crea un archivo llamado `program.js` que contenga:
 
 ```javascript
 console.log(`Hello Babel`);

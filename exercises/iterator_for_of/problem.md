@@ -45,7 +45,7 @@ Create an iteratable object that does the FizzBuzz calculation for a given amoun
 
 ## FizzBuzz Problem
 
-List the numbers from 1 to the max (passed in using `process.argv`). However for every number that is divisible by 3 you write `Fizz` and for ever number that is divisible by 5 you write `Buzz` and for every number that is divisible by both 3 and 5 you write `FizzBuzz`.
+List the numbers from 1 to the max (passed in using `process.argv`). However for every number that is divisible by 3 you write `Fizz` and for every number that is divisible by 5 you write `Buzz` and for every number that is divisible by both 3 and 5 you write `FizzBuzz`.
 
 Here is an example.
 

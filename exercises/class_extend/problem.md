@@ -26,23 +26,14 @@ class Monster extends Character {
     super(x, y);
     this.name = name;
   }
-}
-```
-
-In this example, the `extends` keyword lets `Monster` inherit(build on, reuse) the methods defined in `Character`. When you use this syntax it is also possible to use `super`. `super` allows to specify whether the function defined in this class should be used or the class it extends from, the "super-class".
-
-```javascript
-class Monster extends Character {
-  constructor(x, y, name) {
-    super(x, y);
-    this.name = name;
-  }
   attack(character) {
     super.attack(character);
     character.health_ -= 5;
   }
 }
 ```
+
+In this example, the `extends` keyword lets `Monster` inherit(build on, reuse) the methods defined in `Character`. When you use this syntax it is also possible to use `super`. `super` allows to specify whether the function defined in this class should be used or the class it extends from, the "super-class".
 
 # Problem
 

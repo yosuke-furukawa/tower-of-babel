@@ -17,7 +17,7 @@ Iterable なものを作るには、 `Symbol.Iterator` を使います。 `Symbo
 ```javascript
 // 1000までの値を返すfibonacciを作る
 var fibonacci = {
-  // Symbol.iteratorを持つメソッドを持つオブジェクトにする
+  // Symbol.iteratorメソッドを持つオブジェクトにする
   [Symbol.iterator]() {
     let currentValue = 0, nextValue = 1;
     // iteratorオブジェクトは nextメソッドを持つオブジェクトを返す

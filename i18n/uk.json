@@ -10,9 +10,9 @@
     "COMPUTED PROPERTY":      "ОБЧИСЛЕНІ ВЛАСТИВОСТІ",
     "ITERATOR FOR OF":        "ІТЕРАТОР FOR OF",
     "GENERATOR":              "ГЕНЕРАТОР",
-    "DESTRUCTURE":            "DESESTRUCTURACIÓN",
-    "ARROW FUNCTION":         "FUNCIONES FLECHA",
-    "REST AND SPREAD":        "REST Y PROPAGACIÓN"
+    "DESTRUCTURE":            "ДЕСТРУКТУРИЗАЦІЯ",
+    "ARROW FUNCTION":         "СТРІЛКОВІ ФУНКЦІЇ",
+    "REST AND SPREAD":        "ЗАЛИШКОВІ ПАРАМЕТРИ"
   }
 }
 

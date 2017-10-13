@@ -29,7 +29,7 @@ var obj = {
 };
 ```
 
-In this case the key the string returned by the function. With the new `Computed Property` syntax you can express dynamic properties without using temporary variables.
+In this case the key is the string returned by the function. With the new `Computed Property` syntax you can express dynamic properties without using temporary variables.
 
 # Exercise
 

@@ -1,0 +1,19 @@
+{
+  "subtitle": "Вивчіть функції ES6 за допомогою babel",
+  "exercise": {
+    "BABEL SETUP":            "ВСТАНОВЛЕННЯ BABEL",
+    "CLASS":                  "КЛАС",
+    "CLASS EXTEND":           "РОЗШИРЕННЯ КЛАСУ",
+    "MODULES WITH NAME":      "МОДУЛІ З ІМЕНАМИ",
+    "MODULES DEFAULT EXPORT": "ЕКСПОРТОВАНІ ЗА ЗАМОВЧУВАННЯМ МОДУЛІ",
+    "BLOCK SCOPE":            "ОБЛАСТЬ ВИДИМОСТІ БЛОКУ",
+    "COMPUTED PROPERTY":      "ОБЧИСЛЕНІ ВЛАСТИВОСТІ",
+    "ITERATOR FOR OF":        "ІТЕРАТОР FOR OF",
+    "GENERATOR":              "ГЕНЕРАТОР",
+    "DESTRUCTURE":            "ДЕСТРУКТУРИЗАЦІЯ",
+    "ARROW FUNCTION":         "СТРІЛКОВІ ФУНКЦІЇ",
+    "REST AND SPREAD":        "ЗАЛИШКОВІ ПАРАМЕТРИ"
+  }
+}
+
+

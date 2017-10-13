@@ -6,7 +6,7 @@ var path = require("path");
 var os = require("os");
 var rimraf = require("rimraf");
 
-var tmpDir = path.resolve(os.tmpDir(), "_babel_" + process.pid);
+var tmpDir = os.tmpdir ? path.resolve(os.tmpdir(), "_babel_" + process.pid) : path.resolve(os.tmpDir(), "_babel_" + process.pid);
 
 module.exports = function (exercise) {
     exercise.addProcessor(processor);
@@ -20,8 +20,8 @@ function processor(mode, callback) {
 
     q.nfcall(fs.mkdir, tmpDir).then(function () {
       return q.nfcall(
-        fs.symlink, 
-        path.resolve(__dirname + '/../node_modules'), 
+        fs.symlink,
+        path.resolve(__dirname + '/../node_modules'),
         tmpDir + '/node_modules');
     })
     .then(function(){

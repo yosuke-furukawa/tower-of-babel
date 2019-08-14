@@ -28,7 +28,7 @@ $ babel-node program.js
 Try to run it and make sure it shows `Hello Babel`.
 
 # Exercise
-Create a javascript program that takes the the first command-line argument and
+Create a javascript program that takes the first command-line argument and
 outputs it right after a `"Hello "` String using ES6 template strings.
 
 # Hints

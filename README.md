@@ -9,7 +9,37 @@ This exercises use [babel](http://babeljs.io/). babel allows you to write code w
 
 # How to use
 
+- Create new directory
+
+```bash
+$ mkdir tower-of-babel-solutions && cd tower-of-babel-solutions
 ```
-$ npm install tower-of-babel -g
-$ tower-of-babel
+
+- Initialize the new project
+
+```bash
+$ npm init -y
+```
+
+- Install tower-of-babel local (becouse we can)
+
+```bash
+$ npm i tower-of-babel
+```
+
+- Install babel and babel features
+
+```bash
+$ npm i babel-cli babel-preset-es2015
+```
+
+- Create .babelrc file with necessary config
+
+```bash
+$ echo '{ "presets": ["es2015"] }' > .babelrc
+```
+
+- And run it from node_modules
+```bash
+$ ./node_modules/tower-of-babel/tower-of-babel.js
 ```

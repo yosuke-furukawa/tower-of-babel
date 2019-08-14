@@ -1,14 +1,13 @@
-"use strict";
-var babel = require("babel-core");
-var fs = require("fs");
-var q = require("q");
-var path = require("path");
-var os = require("os");
-var rimraf = require("rimraf");
+import {transform} from "babel-core";
+import fs     from "fs";
+import q      from "q";
+import path   from "path";
+import os     from "os";
+import rimraf from "rimraf";
 
 var tmpDir = os.tmpdir ? path.resolve(os.tmpdir(), "_babel_" + process.pid) : path.resolve(os.tmpDir(), "_babel_" + process.pid);
 
-module.exports = function (exercise) {
+export default function (exercise) {
     exercise.addProcessor(processor);
     exercise.addCleanup(cleanup);
 
@@ -89,7 +88,7 @@ function writeFile(filename, contents) {
 }
 
 var transpile = q.fbind(function (contents, filename) {
-    var transpiled = babel.transform(contents, {
+    var transpiled = transform(contents, {
         filename: filename,
         modules: "common",
         optional: ["runtime"]

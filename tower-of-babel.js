@@ -1,7 +1,7 @@
-#!/usr/bin/env node
+#!/usr/bin/env babel-node
 
-const workshopper = require('workshopper-adventure');
-const path        = require('path');
+import workshopper from 'workshopper-adventure';
+import path from 'path';
 
 function fpath (f) {
   return path.join(__dirname, f)

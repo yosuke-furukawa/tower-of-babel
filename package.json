@@ -18,10 +18,10 @@
   "dependencies": {
     "babel-core": "5.8.38",
     "babel-runtime": "5.8.38",
-    "q": "^1.2.0",
-    "rimraf": "^2.3.2",
-    "workshopper-adventure": "^3.4.5",
-    "workshopper-exercise": "^2.3.0"
+    "q": "1.5.1",
+    "rimraf": "2.7.0",
+    "workshopper-adventure": "3.5.2",
+    "workshopper-exercise": "2.7.0"
   },
   "scripts": {}
 }

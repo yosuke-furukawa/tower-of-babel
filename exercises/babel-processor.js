@@ -1,5 +1,5 @@
 "use strict";
-var babel = require("babel-core");
+var babel = require("@babel/core");
 var fs = require("fs");
 var q = require("q");
 var path = require("path");
@@ -89,10 +89,9 @@ function writeFile(filename, contents) {
 }
 
 var transpile = q.fbind(function (contents, filename) {
-    var transpiled = babel.transform(contents, {
+    var transpiled = babel.transformSync(contents, {
         filename: filename,
-        modules: "common",
-        optional: ["runtime"]
+        presets: ["@babel/env"],
     });
 
     return transpiled;

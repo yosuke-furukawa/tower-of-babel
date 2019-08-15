@@ -4,7 +4,7 @@ ES6の構文は現時点では node.js を使っても全ての機能は使え�
 そこで、一旦 ES6 の文法を有効にするために、 `babel` をインストールします。
 
 ```shell
-$ npm install babel-cli -g
+$ npm install @babel/node @babel/core -g
 ```
 
 こうすると、 `babel` と `babel-node` の２つのコマンドが有効になります。

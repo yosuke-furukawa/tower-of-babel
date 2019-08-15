@@ -20,7 +20,7 @@
     "babel-runtime": "6.26.0",
     "q": "1.5.1",
     "rimraf": "2.7.1",
-    "workshopper-adventure": "3.5.2",
+    "workshopper-adventure": "6.0.4",
     "workshopper-exercise": "2.7.0"
   },
   "scripts": {}

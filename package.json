@@ -21,7 +21,7 @@
     "q": "1.5.1",
     "rimraf": "3.0.0",
     "workshopper-adventure": "6.0.4",
-    "workshopper-exercise": "2.7.0"
+    "workshopper-exercise": "3.0.1"
   },
   "scripts": {}
 }

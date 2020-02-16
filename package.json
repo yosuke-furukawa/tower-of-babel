@@ -19,7 +19,7 @@
     "@babel/core": "7.7.4",
     "@babel/preset-env": "7.7.4",
     "q": "1.5.1",
-    "rimraf": "3.0.0",
+    "rimraf": "3.0.2",
     "workshopper-adventure": "6.1.0",
     "workshopper-exercise": "3.0.1"
   },

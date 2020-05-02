@@ -16,8 +16,8 @@
     "workshopper"
   ],
   "dependencies": {
-    "@babel/core": "7.7.4",
-    "@babel/preset-env": "7.7.4",
+    "@babel/core": "7.9.6",
+    "@babel/preset-env": "7.9.6",
     "q": "1.5.1",
     "rimraf": "3.0.0",
     "workshopper-adventure": "6.1.0",

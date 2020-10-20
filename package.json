@@ -20,7 +20,7 @@
     "@babel/preset-env": "7.11.5",
     "q": "1.5.1",
     "rimraf": "3.0.2",
-    "workshopper-adventure": "6.1.0",
+    "workshopper-adventure": "6.1.1",
     "workshopper-exercise": "3.0.3"
   },
   "scripts": {}

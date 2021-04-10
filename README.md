@@ -41,5 +41,5 @@ $ echo '{ "presets": ["es2015"] }' > .babelrc
 
 - And run it from node_modules
 ```bash
-$ ./node_modules/tower-of-babel/tower-of-babel.js
+$ node ./node_modules/tower-of-babel/tower-of-babel.js
 ```
